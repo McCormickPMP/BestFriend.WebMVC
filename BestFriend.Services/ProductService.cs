@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BestFriend.Data;
+
 
 namespace BestFriend.Services
 {
@@ -15,7 +15,7 @@ namespace BestFriend.Services
             var entity =
                 new Product()
                 {
-                    OwnerId = _userId,
+                  
                     Title = model.Title,
                     Description = model.Description,
                     CreatedUtc = DateTimeOffset.Now
