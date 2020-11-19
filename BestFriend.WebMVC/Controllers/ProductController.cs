@@ -16,5 +16,20 @@ namespace BestFriend.WebMVC.Controllers
             var model = new ProductListItem[0];
             return View();
         }
+        //GET: CREATE
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateProduct(ProductCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
     }
 }
