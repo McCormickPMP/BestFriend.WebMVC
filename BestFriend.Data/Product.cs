@@ -11,6 +11,8 @@ namespace BestFriend.Data
     {
        [Key]
         public int ProductId { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
         public string Category { get; set; }
         [Required]
         public string Title { get; set; }

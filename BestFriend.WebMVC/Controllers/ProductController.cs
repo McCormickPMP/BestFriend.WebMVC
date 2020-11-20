@@ -1,4 +1,6 @@
 ﻿using BestFriend.Models;
+using BestFriend.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +15,28 @@ namespace BestFriend.WebMVC.Controllers
         // GET: Product
         public ActionResult Index()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
             var model = new ProductListItem[0];
             return View();
         }
         //GET: CREATE
-        public ActionResult Create()
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ProductCreate model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
+
+            service.CreateProduct(model);
+
+            return RedirectToAction("Index");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
