@@ -73,5 +73,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GiftModel\" />
+    <Folder Include="OrderModel\" />
+    <Folder Include="StatusModel\" />
+    <Folder Include="SupplierModel\" />
+    <Folder Include="WishListModel\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
