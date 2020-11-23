@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using static BestFriend.Data.ApplicationDbContext;
 
 namespace BestFriend.Services
 {
@@ -23,13 +23,13 @@ namespace BestFriend.Services
             var entity =
                 new Product()
                 {
-
+                    OwnerId = _userId,
                     Title = model.Title,
                     Description = model.Description,
                     CreatedAt = DateTimeOffset.Now
                 };
 
-            using (var ctx = new ApplicationDbContext())
+            using (var ctx = new ProductDbContext())
             {
                 ctx.Products.Add(entity);
                 return ctx.SaveChanges() == 1;
@@ -37,7 +37,7 @@ namespace BestFriend.Services
         }
         public IEnumerable<ProductListItem> GetProducts()
         {
-            using (var ctx = new ApplicationDbContext())
+            using (var ctx = new ProductDbContext())
             {
                 var query =
                    ctx

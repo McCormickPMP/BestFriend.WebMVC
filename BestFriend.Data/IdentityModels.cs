@@ -31,7 +31,11 @@ namespace BestFriend.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Product> Products { get; set; }
+        public class ProductDbContext : DbContext
+        {
+            public DbSet<Product> Products { get; set; }
+        }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
