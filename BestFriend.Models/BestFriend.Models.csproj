@@ -54,9 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductCreate.cs" />
-    <Compile Include="ProductListItem.cs" />
+    <Compile Include="CustomerModel\CustomerCreate.cs" />
+    <Compile Include="CustomerModel\CustomerDetail.cs" />
+    <Compile Include="CustomerModel\CustomerList.cs" />
+    <Compile Include="CustomerModel\CustomerUpdate.cs" />
+    <Compile Include="GiftModel.cs" />
+    <Compile Include="OrderModel.cs" />
+    <Compile Include="ProductModel\ProductCreate.cs" />
+    <Compile Include="ProductModel\ProductDetail.cs" />
+    <Compile Include="ProductModel\ProductListItem.cs" />
+    <Compile Include="ProductModel\ProductUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusModel.cs" />
+    <Compile Include="SupplierModel.cs" />
+    <Compile Include="WishList.Model.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

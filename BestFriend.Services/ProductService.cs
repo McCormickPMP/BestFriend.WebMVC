@@ -1,5 +1,6 @@
 ﻿using BestFriend.Data;
 using BestFriend.Models;
+using BestFriend.Models.ProductModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +12,24 @@ namespace BestFriend.Services
 {
     public class ProductService
     {
-        private readonly Guid _userId;
-
-        public ProductService(Guid userId)
+        private readonly Guid _ownerId;
+        public ProductService(Guid ownerId)
         {
-            _userId = userId;
+            _ownerId = ownerId;
         }
-
         public bool CreateProduct(ProductCreate model)
         {
             var entity =
                 new Product()
                 {
-                    OwnerId = _userId,
+                    OwnerId = _ownerId,
                     Title = model.Title,
                     Description = model.Description,
-                    CreatedAt = DateTimeOffset.Now
+                    Price = model.Price,
+                    InventoryCount= model.InventoryCount,
+                    CreatedProduct = DateTimeOffset.Now
                 };
-
-            using (var ctx = new ProductDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 ctx.Products.Add(entity);
                 return ctx.SaveChanges() == 1;
@@ -37,25 +37,83 @@ namespace BestFriend.Services
         }
         public IEnumerable<ProductListItem> GetProducts()
         {
-            using (var ctx = new ProductDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var query =
-                   ctx
+                    ctx
                         .Products
-                        .Where(e => e.OwnerId == _userId)
+                        .Where(e => e.OwnerId == _ownerId)
                         .Select(
                             e =>
                                 new ProductListItem
                                 {
                                     ProductId = e.ProductId,
                                     Title = e.Title,
-                                    CreatedAt = e.CreatedAt
+                                    Description = e.Description,
+                                    Price = e.Price,
+                                    InventoryCount = e.InventoryCount,
+                                    CreatedProduct = e.CreatedProduct,
+                                    ModifyProduct = e.ModifyProduct
                                 }
                         );
 
                 return query.ToArray();
             }
         }
+        public ProductDetail GetProductById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Products
+                        .Single(e => e.ProductId == id && e.OwnerId == _ownerId);
+                return
+                    new ProductDetail
+                    {
+                        ProductId = entity.ProductId,
+                        Title = entity.Title,
+                        Description = entity.Description,
+                        Price = entity.Price,
+                        InventoryCount = entity.InventoryCount,
+                        CreatedProduct = entity.CreatedProduct,
+                        ModifyProduct = entity.ModifyProduct
+                    };
+            }
+        }
+        public bool UpdateProduct(ProductUpdate model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Products
+                        .Single(e => e.ProductId == model.ProductId && e.OwnerId == _ownerId);
+
+                entity.ProductId = model.ProductId;
+                entity.Title = model.Title;
+                entity.Description = model.Description;
+                entity.Price = model.Price;
+                entity.InventoryCount = model.InventoryCount;
+                entity.ModifyProduct = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteProduct(int productId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Products
+                        .Single(e => e.ProductId == productId && e.OwnerId == _ownerId);
+
+                ctx.Products.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
-    
+
 }

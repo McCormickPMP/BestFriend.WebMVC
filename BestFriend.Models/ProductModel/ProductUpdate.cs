@@ -5,23 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BestFriend.Data
+namespace BestFriend.Models.ProductModel
 {
-    public class Product
+    public class ProductUpdate
     {
-       [Key]
         public int ProductId { get; set; }
 
-        [Required]
-        public Guid OwnerId { get; set; }
         public string Category { get; set; }
         [Required]
+        [Display(Name = "Product Name")]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
+        
         public decimal Price { get; set; }
-        [Required]
+        
+        [Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }
         public int Rating { get; set; }
         public DateTimeOffset CreatedProduct { get; set; }

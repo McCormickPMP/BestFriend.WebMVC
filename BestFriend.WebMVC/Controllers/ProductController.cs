@@ -1,4 +1,5 @@
 ﻿using BestFriend.Models;
+using BestFriend.Models.ProductModel;
 using BestFriend.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -17,7 +18,7 @@ namespace BestFriend.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ProductService(userId);
-            var model = new ProductListItem[0];
+          
             return View();
         }
         //GET: CREATE

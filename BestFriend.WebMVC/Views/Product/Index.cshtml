@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BestFriend.Models.ProductListItem>
+﻿@model IEnumerable<BestFriend.Models.Product>
 
 @{
     ViewBag.Title = "Index";
@@ -43,10 +43,10 @@
             @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
+            @Html.DisplayNameFor(model => model.CreatedProduct)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ModifiedAt)
+            @Html.DisplayNameFor(model => model.ModifiedProduct)
         </th>
         <th></th>
     </tr>
@@ -76,10 +76,10 @@
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
+                @Html.DisplayFor(modelItem => item.CreatedProduct)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModifiedAt)
+                @Html.DisplayFor(modelItem => item.ModifiedProduct)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
@@ -92,27 +92,27 @@
 </table>
 @section scripts {
     <script language="javascript" type="text/javascript">
-     $(document).ready(function () {
-         $("i[data-toggle='star']")
-             .css({ "cursor": "pointer" })
-             .click(function (e) {
-                 var target = $(e.target);
-                 var noteId = target.attr("data-id");
-                 var starSet = target.hasClass("glyphicon-star");
+        $(document).ready(function () {
+            $("i[data-toggle='star']")
+                .css({ "cursor": "pointer" })
+                .click(function (e) {
+                    var target = $(e.target);
+                    var noteId = target.attr("data-id");
+                    var starSet = target.hasClass("glyphicon-star");
 
-                 $.ajax({
-                     method: starSet ? "DELETE" : "PUT",
-                     url: "/api/note/" + noteId + "/star",
-                     data: null
-                 })
-                 .done(function (r) {
-                     target.removeClass();
-                     target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
-                 })
-                 .fail(function (r) {
-                     alert("Failed to change star status");
-                 });
-             });
-     });
+                    $.ajax({
+                        method: starSet ? "DELETE" : "PUT",
+                        url: "/api/note/" + noteId + "/star",
+                        data: null
+                    })
+                        .done(function (r) {
+                            target.removeClass();
+                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                        })
+                        .fail(function (r) {
+                            alert("Failed to change star status");
+                        });
+                });
+        });
     </script>
 }
