@@ -61,6 +61,10 @@
     <Compile Include="Migrations\202011191745532_InitialMigration.Designer.cs">
       <DependentUpon>202011191745532_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011241841079_UpdatedMVCLayers.cs" />
+    <Compile Include="Migrations\202011241841079_UpdatedMVCLayers.Designer.cs">
+      <DependentUpon>202011241841079_UpdatedMVCLayers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -76,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202011191745532_InitialMigration.resx">
       <DependentUpon>202011191745532_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011241841079_UpdatedMVCLayers.resx">
+      <DependentUpon>202011241841079_UpdatedMVCLayers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
