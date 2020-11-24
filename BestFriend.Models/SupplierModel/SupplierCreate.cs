@@ -5,22 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BestFriend.Data
+namespace BestFriend.Models.SupplierModel
 {
-    public class Supplier
+    public class SupplierCreate
     {
-        [Key]
         public int SupplierId { get; set; }
         public Guid SupplierGuid { get; set; }
-        [Required]
+
+        [Display(Name = "Name of Supplier")]
         public char SupplierName { get; set; }
         public int Phone { get; set; }
         public char SuppAddress { get; set; }
         public char SuppCity { get; set; }
         public char SuppZipcode { get; set; }
-        [Required]
+
+        [DataType(DataType.EmailAddress)]
         public char SuppEmail { get; set; }
         public DateTimeOffset CreateSupp { get; set; }
-        public DateTimeOffset ModifySupp { get; set; }
+
     }
 }

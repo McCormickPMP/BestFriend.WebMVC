@@ -105,5 +105,6 @@ namespace BestFriend.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
     }
 }
