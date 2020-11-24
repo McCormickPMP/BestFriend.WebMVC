@@ -75,7 +75,6 @@
     <Compile Include="StatusModel\StatusDetail.cs" />
     <Compile Include="StatusModel\StatusListItem.cs" />
     <Compile Include="StatusModel\StatusUpdate.cs" />
-    <Compile Include="SupplierModel.cs" />
     <Compile Include="SupplierModel\SupplierCreate.cs" />
     <Compile Include="SupplierModel\SupplierDetail.cs" />
     <Compile Include="SupplierModel\SupplierListItem.cs" />
