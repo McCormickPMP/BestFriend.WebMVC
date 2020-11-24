@@ -12,10 +12,10 @@ namespace BestFriend.Models.ProductModel
         public int ProductId { get; set; }
 
         public string Category { get; set; }
-        [Required]
+      
         [Display(Name = "Product Name")]
         public string Title { get; set; }
-        [Required]
+       
         public string Description { get; set; }
         
         public decimal Price { get; set; }

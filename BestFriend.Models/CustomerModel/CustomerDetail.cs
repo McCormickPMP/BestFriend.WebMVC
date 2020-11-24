@@ -10,15 +10,15 @@ namespace BestFriend.Models.CustomerModel
     public class CustomerDetail
     {
         public int CustomerID { get; set; }
-        [Required]
+      
         public Guid CustId { get; set; }
-        [Required]
+       
         public char UserName { get; set; }
-        [Required]
+    
         public char Email { get; set; }
-        [Required]
+      
         public char Password { get; set; }
-        [Required]
+        
         public char FullName { get; set; }
         public char Address { get; set; }
         public char City { get; set; }

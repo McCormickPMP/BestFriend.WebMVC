@@ -10,18 +10,18 @@ namespace BestFriend.Models.CustomerModel
     public class CustomerCreate
     {
       
-        [Required]
+        
         [Display(Name = "UserName")]
         public char UserName { get; set; }
-        [Required]
+       
         [DataType(DataType.EmailAddress)]
         public char Email { get; set; }
         
-        [Required]
+        
         [DataType(DataType.Password)]
         public char Password { get; set; }
        
-        [Required]
+       [Display(Name ="Enter Full Name")]
         public char FullName { get; set; }
   
         [Display(Name = "Zipcode")]

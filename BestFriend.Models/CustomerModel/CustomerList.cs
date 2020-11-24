@@ -11,12 +11,12 @@ namespace BestFriend.Models.CustomerModel
     {
         public int CustomerID { get; set; }
 
-        [Required]
+       
         public char UserName { get; set; }
-        [Required]
+   
         public char Email { get; set; }
        
-        [Required]
+     
         public char FullName { get; set; }
         public char Address { get; set; }
         public char City { get; set; }

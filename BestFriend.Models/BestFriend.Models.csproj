@@ -59,6 +59,10 @@
     <Compile Include="CustomerModel\CustomerList.cs" />
     <Compile Include="CustomerModel\CustomerUpdate.cs" />
     <Compile Include="GiftModel.cs" />
+    <Compile Include="GiftModel\GiftCreate.cs" />
+    <Compile Include="GiftModel\GiftDetail.cs" />
+    <Compile Include="GiftModel\GiftListItem.cs" />
+    <Compile Include="GiftModel\GiftUpdate.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="ProductModel\ProductCreate.cs" />
     <Compile Include="ProductModel\ProductDetail.cs" />
@@ -74,7 +78,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GiftModel\" />
     <Folder Include="OrderModel\" />
     <Folder Include="StatusModel\" />
     <Folder Include="SupplierModel\" />

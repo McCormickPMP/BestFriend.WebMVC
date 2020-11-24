@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BestFriend.Data
+namespace BestFriend.Models.GiftModel
 {
-    public  class Gift
+    public class GiftDetail
     {
-        [Key]
+        
         public int GiftId { get; set; }
         public Guid DonationId { get; set; }
         public int CustomerId { get; set; }
-        [Required]
         public char TType { get; set; }
+        public enum Ttype { dollars, specificProduct, giftBasket}
         public DateTimeOffset CreatedGift { get; set; }
         public DateTimeOffset RedeemGift { get; set; }
     }
