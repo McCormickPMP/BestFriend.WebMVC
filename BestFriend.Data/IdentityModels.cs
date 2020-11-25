@@ -24,21 +24,19 @@ namespace BestFriend.Data
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false) { }
-        
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet <Gift> Gifts { get; set; }
-        public DbSet <Status> Statuses { get; set; }
-        public DbSet <Supplier>  Suppliers{ get; set; }
-        public DbSet <WishList> WishLists { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Gift> Gifts { get; set; }
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
 
-        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
