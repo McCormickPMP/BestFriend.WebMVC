@@ -12,16 +12,20 @@ using System.Web.Mvc;
 namespace BestFriend.WebMVC.Controllers
 {
     [Authorize]
+    
     public class ProductController : Controller
     {
-        
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Product/Index
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProductService(userId);
-            var model = new ProductListItem[0];
-            return View(model);
+            List<Product> productList = _db.Products.ToList();
+            List<Product> orderedList = productList.OrderBy(prod => prod.Title).ToList();
+            return View(orderedList);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            // var service = new ProductService(userId);
+            //var model = new ProductListItem[0];
+            //return View(model);
         }
         public ActionResult Create()
         {

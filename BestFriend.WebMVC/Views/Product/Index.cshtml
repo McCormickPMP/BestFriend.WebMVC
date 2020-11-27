@@ -1,13 +1,13 @@
-﻿@model IEnumerable<BestFriend.Models.ProductModel.ProductListItem>
+﻿@model IEnumerable<BestFriend.Data.Product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Products";
 }
 
-<h2>Index</h2>
+<h2>List of Products</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create a Product", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
