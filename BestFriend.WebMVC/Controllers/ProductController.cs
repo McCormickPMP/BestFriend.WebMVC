@@ -57,7 +57,7 @@ namespace BestFriend.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateProductService();
-            var detail = service GetProductById(id);
+            var detail = service.GetProductById(id);
             var model =
                 new ProductUpdate
                 {
@@ -68,7 +68,7 @@ namespace BestFriend.WebMVC.Controllers
             return View(model);
 
         }
-
+        //POST: Product/Update/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ProductUpdate model)
@@ -92,6 +92,15 @@ namespace BestFriend.WebMVC.Controllers
             ModelState.AddModelError("", "Your product could not be updated.");
             return View(model);
         }
+        // GET : Note/Delete/{id}
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateProductService();
+            var model = svc.GetProductById(id);
+
+            return View(model);
+        }
+        //POST: Product/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
