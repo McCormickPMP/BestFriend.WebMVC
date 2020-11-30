@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BestFriend.Data
 {
+    public enum Class {[Display(Name = "Customer")] Customer = 1, [Display(Name = "Admin")] Admin }
     public class Customer
     {
         [Key]

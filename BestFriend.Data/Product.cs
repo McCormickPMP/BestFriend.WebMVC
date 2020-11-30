@@ -26,6 +26,6 @@ namespace BestFriend.Data
         public int Rating { get; set; }
         public DateTimeOffset CreatedProduct { get; set; }
         public DateTimeOffset? ModifyProduct { get; set; }
-
     }
+    
 }
