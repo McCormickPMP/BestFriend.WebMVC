@@ -1,16 +1,19 @@
 ﻿using BestFriend.Data;
+using BestFriend.Models;
 using BestFriend.Models.CustomerModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BestFriend.Data.ApplicationDbContext;
 
 namespace BestFriend.Services
 {
     public class CustomerService
     {
         private readonly Guid _custId;
+       
         public CustomerService(Guid custId)
         {
             _custId = custId;
@@ -26,12 +29,15 @@ namespace BestFriend.Services
                     FullName = model.FullName,
                     CreateCustomer = DateTimeOffset.Now
                 };
+
+        
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Customers.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
+            //Get Customer
         public IEnumerable<CustomerList> GetCustomers()
         {
             using (var ctx = new ApplicationDbContext())

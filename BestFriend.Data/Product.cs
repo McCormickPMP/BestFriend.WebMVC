@@ -27,5 +27,4 @@ namespace BestFriend.Data
         public DateTimeOffset CreatedProduct { get; set; }
         public DateTimeOffset? ModifyProduct { get; set; }
     }
-    
 }

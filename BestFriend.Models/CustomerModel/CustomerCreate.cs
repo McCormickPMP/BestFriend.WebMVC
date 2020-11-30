@@ -9,9 +9,10 @@ namespace BestFriend.Models.CustomerModel
 {
     public class CustomerCreate
     {
-      
-        
-        [Display(Name = "UserName")]
+        [Key]
+        public int CustomerID { get; set; }
+
+        [Display(Name = "User Name")]
         public char UserName { get; set; }
        
         [DataType(DataType.EmailAddress)]

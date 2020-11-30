@@ -19,13 +19,9 @@ namespace BestFriend.WebMVC.Controllers
         // GET: Product/Index
         public ActionResult Index()
         {
-            List<Product> productList = _db.Products.ToList();
-            List<Product> orderedList = productList.OrderBy(prod => prod.Title).ToList();
-            return View(orderedList);
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            // var service = new ProductService(userId);
-            //var model = new ProductListItem[0];
-            //return View(model);
+            ProductService productServices = CreateProductService();
+            var products = productServices.GetProducts();
+            return View(products);
         }
         public ActionResult Create()
         {
@@ -44,9 +40,10 @@ namespace BestFriend.WebMVC.Controllers
 
             if (service.CreateProduct(model))
             {
-                TempData["SaveResult"] = "Your note was created.";
+                TempData["SaveResult"] = "Your product was created.";
                  return RedirectToAction("Index");
              };
+
             ModelState.AddModelError("", "Product could not be created.");
 
             return View(model);
@@ -96,7 +93,7 @@ namespace BestFriend.WebMVC.Controllers
             ModelState.AddModelError("", "Your product could not be updated.");
             return View(model);
         }
-        // GET : Note/Delete/{id}
+        // GET : Product/Delete/{id}
         public ActionResult Delete(int id)
         {
             var svc = CreateProductService();
@@ -124,7 +121,5 @@ namespace BestFriend.WebMVC.Controllers
             var service = new ProductService(userId);
             return service;
         }
-       
-
     }
 }

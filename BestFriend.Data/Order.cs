@@ -27,7 +27,7 @@ namespace BestFriend.Data
         public virtual Customer Customer { get; set; }
        
         public int StatusId { get; set; }
-        [ForeignKey(nameof(Status))]
+        [ForeignKey(nameof(StatusId))]
         public virtual Status Status { get; set; }
 
         [Required]
