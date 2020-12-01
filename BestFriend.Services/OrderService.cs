@@ -24,7 +24,7 @@ namespace BestFriend.Services
                     ItemId = model.ItemId,
                     Quantity = model.Quantity,
                     CustomerId = model.CustomerId,
-                    StatusId = model.StatusId,
+                    //StatusId = model.StatusId,
                     CreateOrder = DateTimeOffset.Now
                 };
 
@@ -50,7 +50,7 @@ namespace BestFriend.Services
                                     Quantity = e.Quantity,
                                     ItemId = e.ItemId,
                                     CustomerId = e.CustomerId,
-                                    StatusId = e.StatusId,
+                                    //StatusId = e.StatusId,
                                     CreateOrder = DateTimeOffset.Now
                                 }
                         );
@@ -73,7 +73,7 @@ namespace BestFriend.Services
                         Quantity = entity.Quantity,
                         ItemId = entity.ItemId,
                         CustomerId = entity.CustomerId,
-                        StatusId = entity.StatusId,
+                       // StatusId = entity.StatusId,
                         CreateOrder = DateTimeOffset.Now
                     };
             }
@@ -91,7 +91,7 @@ namespace BestFriend.Services
                 entity.Quantity = model.Quantity;
                 entity.ItemId = model.ItemId;
                 entity.CustomerId = model.CustomerId;
-                entity.StatusId = model.StatusId;
+                //entity.StatusId = model.StatusId;
                 entity.ModifyOrder = DateTimeOffset.Now;
                   
 

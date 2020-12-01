@@ -26,9 +26,9 @@ namespace BestFriend.Data
         [ForeignKey(nameof(CustomerId))]
         public virtual Customer Customer { get; set; }
  
-        public int StatusId { get; set; }
-        [ForeignKey(nameof(StatusId))]
-        public virtual Status Status { get; set; }
+        //public int StatusId { get; set; }
+        //[ForeignKey(nameof(StatusId))]
+        //public virtual Status Status { get; set; }
    
         public string Category { get; set; }
         public DateTimeOffset CreateOrder{ get; set; }
