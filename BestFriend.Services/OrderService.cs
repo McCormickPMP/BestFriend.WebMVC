@@ -50,7 +50,7 @@ namespace BestFriend.Services
                                     OrderId = e.OrderId,
                                     Quantity = e.Quantity,
                                     ItemId = e.ItemId,
-                                    CustomerId = e.CustomerId,
+                                    //CustomerId = e.CustomerId,
                                     //StatusId = e.StatusId,
                                     CreateOrder = DateTimeOffset.Now
                                 }
@@ -73,7 +73,7 @@ namespace BestFriend.Services
                         OrderId = entity.OrderId,
                         Quantity = entity.Quantity,
                         ItemId = entity.ItemId,
-                        CustomerId = entity.CustomerId,
+                        //CustomerId = entity.CustomerId,
                        // StatusId = entity.StatusId,
                         CreateOrder = DateTimeOffset.Now
                     };
@@ -91,7 +91,7 @@ namespace BestFriend.Services
                 entity.OrderId = model.OrderId;
                 entity.Quantity = model.Quantity;
                 entity.ItemId = model.ItemId;
-                entity.CustomerId = model.CustomerId;
+                //entity.CustomerId = model.CustomerId;
                 //entity.StatusId = model.StatusId;
                 entity.ModifyOrder = DateTimeOffset.Now;
                 return ctx.SaveChanges() == 1;

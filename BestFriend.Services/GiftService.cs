@@ -24,7 +24,7 @@ namespace BestFriend.Services
                 new Gift()
                 {
                     DonationId = _donationId,
-                    CustomerId = model.CustomerId,
+                    //CustomerId = model.CustomerId,
                     TType = (Data.TType)model.TType,
                     CreatedGift = DateTimeOffset.Now
                 };
@@ -48,7 +48,7 @@ namespace BestFriend.Services
                                 new GiftListItem
                                 {
                                     GiftId = e.GiftId,
-                                    CustomerId = e.CustomerId,
+                                    //CustomerId = e.CustomerId,
                                     TType = (Models.GiftModel.TType)e.TType,
                                     CreatedGift = e.CreatedGift
                                 }
@@ -69,7 +69,7 @@ namespace BestFriend.Services
                     new GiftDetail
                     {
                         GiftId = entity.GiftId,
-                        CustomerId = entity.CustomerId,
+                       // CustomerId = entity.CustomerId,
                         TType = (Models.GiftModel.TType)entity.TType,
                         CreatedGift = entity.CreatedGift,
                         RedeemGift = entity.RedeemGift
@@ -85,7 +85,7 @@ namespace BestFriend.Services
                         .Gifts
                         .Single(e => e.GiftId== model.GiftId && e.DonationId == _donationId);
 
-                entity.CustomerId = model.CustomerId;
+                //entity.CustomerId = model.CustomerId;
                 entity.TType = (Data.TType)model.TType;
                 entity.RedeemGift = DateTimeOffset.UtcNow;
 
