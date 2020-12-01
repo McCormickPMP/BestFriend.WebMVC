@@ -13,7 +13,7 @@ namespace BestFriend.Data
         public int StatusId { get; set; }
         public Guid StatusGuid { get; set; }
         [Required]
-        public char StatusType { get; set; }
+        public string StatusType { get; set; }
         public DateTimeOffset CreateStatus { get; set; }
         public DateTimeOffset ModifyStatus { get; set; }
     }

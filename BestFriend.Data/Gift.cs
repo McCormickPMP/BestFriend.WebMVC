@@ -20,7 +20,7 @@ namespace BestFriend.Data
         public virtual Customer Customer { get; set; }
        
         [Required]
-        public char TType { get; set; }
+        public string TType { get; set; }
         public DateTimeOffset CreatedGift { get; set; }
         public DateTimeOffset RedeemGift { get; set; }
     }

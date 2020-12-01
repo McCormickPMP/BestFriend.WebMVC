@@ -15,7 +15,7 @@ namespace BestFriend.Data
         [Required]
         public decimal Money { get; set; }
         [Required]
-        public char Item { get; set; }
+        public string Item { get; set; }
        
         public int Supplier { get; set; }
         public DateTimeOffset CreateWish { get; set; }
