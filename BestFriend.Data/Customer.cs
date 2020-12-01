@@ -16,17 +16,17 @@ namespace BestFriend.Data
        [Required]
         public Guid CustId { get; set; }
         [Required]
-        public char  UserName { get; set; }
+        public string  UserName { get; set; }
         [Required]
-        public char  Email { get; set; }
+        public string  Email { get; set; }
         [Required]
-        public char  Password { get; set; }
-        public string Class { get; set; }
+        public string  Password { get; set; }
+        public Class Class { get; set; }
         [Required]
-        public char FullName { get; set; }
-        public char Address { get; set; }
-        public char City { get; set; }
-        public char ZipCode { get; set; }
+        public string FullName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string ZipCode { get; set; }
         public DateTimeOffset CreateCustomer { get; set; }
         public DateTimeOffset ModifyCustomer { get; set; }
     }

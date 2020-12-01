@@ -16,7 +16,7 @@ namespace BestFriend.Services
        
         public CustomerService(Guid custId)
         {
-            _custId = custId;
+           _custId = custId;
         }
         public bool CreateCustomer(CustomerCreate model)
         {
