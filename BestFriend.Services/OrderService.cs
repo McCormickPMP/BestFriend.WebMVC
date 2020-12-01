@@ -21,6 +21,7 @@ namespace BestFriend.Services
             var entity =
                 new Order()
                 {
+                    OrderGuid = _orderGuid,
                     ItemId = model.ItemId,
                     Quantity = model.Quantity,
                     CustomerId = model.CustomerId,
@@ -34,6 +35,7 @@ namespace BestFriend.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+       
         public IEnumerable<OrderListItem> GetOrders()
         {
             using (var ctx = new ApplicationDbContext())
@@ -42,8 +44,7 @@ namespace BestFriend.Services
                     ctx
                         .Orders
                         .Where(e => e.OrderGuid == _orderGuid)
-                        .Select(
-                            e =>
+                        .Select(e =>
                                 new OrderListItem
                                 {
                                     OrderId = e.OrderId,

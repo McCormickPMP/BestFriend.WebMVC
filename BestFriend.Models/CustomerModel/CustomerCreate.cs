@@ -10,9 +10,7 @@ namespace BestFriend.Models.CustomerModel
 {
     public class CustomerCreate
     {
-      
-    
-
+        [Required]
         [Display(Name = "User Name")]
         public string UserName { get; set; }
        

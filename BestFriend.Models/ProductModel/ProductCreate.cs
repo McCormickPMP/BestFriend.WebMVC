@@ -9,6 +9,7 @@ namespace BestFriend.Models.ProductModel
 {
     public class ProductCreate
     {
+        [Required]
         public int ProductId { get; set; }
 
         public string Category { get; set; }

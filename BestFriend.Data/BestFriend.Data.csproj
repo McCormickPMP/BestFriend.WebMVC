@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202012011357169_UpdateZipcodeFromStringToInt.Designer.cs">
       <DependentUpon>202012011357169_UpdateZipcodeFromStringToInt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012011854258_CommentedOutStatusIdInOrder.cs" />
+    <Compile Include="Migrations\202012011854258_CommentedOutStatusIdInOrder.Designer.cs">
+      <DependentUpon>202012011854258_CommentedOutStatusIdInOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012011357169_UpdateZipcodeFromStringToInt.resx">
       <DependentUpon>202012011357169_UpdateZipcodeFromStringToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012011854258_CommentedOutStatusIdInOrder.resx">
+      <DependentUpon>202012011854258_CommentedOutStatusIdInOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
