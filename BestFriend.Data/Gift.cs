@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BestFriend.Data
 {
-    public enum Ttype {[Display(Name = "Dollars")] Dollars = 1, [Display(Name = "Specific Product")] SpecificProduct, [Display(Name ="Gift Basket")] GiftBasket }
+    public enum TType {[Display(Name = "Dollars")] Dollars = 1, [Display(Name = "Specific Product")] SpecificProduct, [Display(Name ="Gift Basket")] GiftBasket }
     public  class Gift
     {
         [Key]
@@ -20,7 +20,7 @@ namespace BestFriend.Data
         public virtual Customer Customer { get; set; }
        
         [Required]
-        public string TType { get; set; }
+        public TType TType { get; set; }
         public DateTimeOffset CreatedGift { get; set; }
         public DateTimeOffset RedeemGift { get; set; }
     }

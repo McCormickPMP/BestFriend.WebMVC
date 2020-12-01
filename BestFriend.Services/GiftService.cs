@@ -1,4 +1,5 @@
 ﻿using BestFriend.Data;
+using BestFriend.Models;
 using BestFriend.Models.GiftModel;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace BestFriend.Services
                 {
                     DonationId = _donationId,
                     CustomerId = model.CustomerId,
-                    TType = model.TType,
+                    TType = (Data.TType)model.TType,
                     CreatedGift = DateTimeOffset.Now
                 };
 
@@ -48,7 +49,7 @@ namespace BestFriend.Services
                                 {
                                     GiftId = e.GiftId,
                                     CustomerId = e.CustomerId,
-                                    TType = e.TType,
+                                    TType = (Models.GiftModel.TType)e.TType,
                                     CreatedGift = e.CreatedGift
                                 }
                         );
@@ -69,7 +70,7 @@ namespace BestFriend.Services
                     {
                         GiftId = entity.GiftId,
                         CustomerId = entity.CustomerId,
-                        TType = entity.TType,
+                        TType = (Models.GiftModel.TType)entity.TType,
                         CreatedGift = entity.CreatedGift,
                         RedeemGift = entity.RedeemGift
                     };
@@ -85,7 +86,7 @@ namespace BestFriend.Services
                         .Single(e => e.GiftId== model.GiftId && e.DonationId == _donationId);
 
                 entity.CustomerId = model.CustomerId;
-                entity.TType = model.TType;
+                entity.TType = (Data.TType)model.TType;
                 entity.RedeemGift = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;

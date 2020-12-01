@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,24 +10,24 @@ namespace BestFriend.Models.CustomerModel
 {
     public class CustomerCreate
     {
-        [Key]
+      
         public int CustomerID { get; set; }
 
         [Display(Name = "User Name")]
-        public char UserName { get; set; }
+        public string UserName { get; set; }
        
         [DataType(DataType.EmailAddress)]
-        public char Email { get; set; }
+        public string Email { get; set; }
         
         
         [DataType(DataType.Password)]
-        public char Password { get; set; }
+        public string Password { get; set; }
        
        [Display(Name ="Enter Full Name")]
-        public char FullName { get; set; }
+        public string FullName { get; set; }
   
         [Display(Name = "Zipcode")]
-        public char ZipCode { get; set; }
+        public int ZipCode { get; set; }
        
     }
 }

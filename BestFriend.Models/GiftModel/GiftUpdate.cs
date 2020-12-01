@@ -11,8 +11,8 @@ namespace BestFriend.Models.GiftModel
         public int GiftId { get; set; }
         public Guid DonationId { get; set; }
         public int CustomerId { get; set; }
-        public char TType { get; set; }
-        public enum Ttype { dollars, specificProduct, giftBasket }
+        public TType TType { get; set; }
+
         public DateTimeOffset CreatedGift { get; set; }
         public DateTimeOffset RedeemGift { get; set; }
     }

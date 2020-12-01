@@ -11,7 +11,7 @@ namespace BestFriend.Models.WishListModel
         public int WishId { get; set; }
         public Guid WishGuid { get; set; }
         public decimal Money { get; set; }
-        public char Item { get; set; }
+        public string Item { get; set; }
         public int Supplier { get; set; }
         public DateTimeOffset ModifyWish { get; set; }
     }

@@ -10,18 +10,19 @@ namespace BestFriend.Models.CustomerModel
     public class CustomerUpdate
     {
         public int CustomerID { get; set; }
-       
-      
-        public char UserName { get; set; }
-      
-        public char Email { get; set; }
-    
-        public char Password { get; set; }
-       
-        public char FullName { get; set; }
-        public char Address { get; set; }
-        public char City { get; set; }
-        public char ZipCode { get; set; }
+
+        public Guid CustId { get; set; }
+
+        public string UserName { get; set; }
+
+        public string Email { get; set; }
+
+        public string Password { get; set; }
+
+        public string FullName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public int ZipCode { get; set; }
         public DateTimeOffset CreateCustomer { get; set; }
         public DateTimeOffset ModifyCustomer { get; set; }
     }

@@ -69,6 +69,14 @@
     <Compile Include="Migrations\202011302215023_UpdateCustomer.Designer.cs">
       <DependentUpon>202011302215023_UpdateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012011349396_UpdatedAllfromCharToString.cs" />
+    <Compile Include="Migrations\202012011349396_UpdatedAllfromCharToString.Designer.cs">
+      <DependentUpon>202012011349396_UpdatedAllfromCharToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012011357169_UpdateZipcodeFromStringToInt.cs" />
+    <Compile Include="Migrations\202012011357169_UpdateZipcodeFromStringToInt.Designer.cs">
+      <DependentUpon>202012011357169_UpdateZipcodeFromStringToInt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -90,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011302215023_UpdateCustomer.resx">
       <DependentUpon>202011302215023_UpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012011349396_UpdatedAllfromCharToString.resx">
+      <DependentUpon>202012011349396_UpdatedAllfromCharToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012011357169_UpdateZipcodeFromStringToInt.resx">
+      <DependentUpon>202012011357169_UpdateZipcodeFromStringToInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

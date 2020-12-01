@@ -13,14 +13,14 @@ namespace BestFriend.Models.SupplierModel
         public Guid SupplierGuid { get; set; }
 
         [Display(Name = "Name of Supplier")]
-        public char SupplierName { get; set; }
+        public string SupplierName { get; set; }
         public int Phone { get; set; }
-        public char SuppAddress { get; set; }
-        public char SuppCity { get; set; }
-        public char SuppZipcode { get; set; }
+        public string SuppAddress { get; set; }
+        public string SuppCity { get; set; }
+        public int SuppZipcode { get; set; }
 
         [DataType(DataType.EmailAddress)]
-        public char SuppEmail { get; set; }
+        public string SuppEmail { get; set; }
         public DateTimeOffset CreateSupp { get; set; }
 
     }

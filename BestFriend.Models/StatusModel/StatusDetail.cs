@@ -9,7 +9,7 @@ namespace BestFriend.Models.StatusModel
     public class StatusDetail
     {
         public int StatusId { get; set; }
-        public char StatusType { get; set; }
+        public string StatusType { get; set; }
         public DateTimeOffset CreateStatus { get; set; }
         public DateTimeOffset ModifyStatus { get; set; }
     }

@@ -17,7 +17,7 @@ namespace BestFriend.Data
         public int Phone { get; set; }
         public string SuppAddress { get; set; }
         public string SuppCity { get; set; }
-        public string SuppZipcode { get; set; }
+        public int SuppZipcode { get; set; }
         [Required]
         public string SuppEmail { get; set; }
         public DateTimeOffset CreateSupp { get; set; }
