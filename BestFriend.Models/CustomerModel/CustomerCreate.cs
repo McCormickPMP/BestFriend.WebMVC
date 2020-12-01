@@ -11,7 +11,7 @@ namespace BestFriend.Models.CustomerModel
     public class CustomerCreate
     {
       
-        public int CustomerID { get; set; }
+    
 
         [Display(Name = "User Name")]
         public string UserName { get; set; }
@@ -26,8 +26,7 @@ namespace BestFriend.Models.CustomerModel
        [Display(Name ="Enter Full Name")]
         public string FullName { get; set; }
   
-        [Display(Name = "Zipcode")]
-        public int ZipCode { get; set; }
+      
        
     }
 }

@@ -21,8 +21,8 @@ namespace BestFriend.Models.CustomerModel
         
         public string FullName { get; set; }
         public string Address { get; set; }
-        public string City { get; set; }
-        public int ZipCode { get; set; }
+        //public string City { get; set; }
+       //public int ZipCode { get; set; }
         public DateTimeOffset CreateCustomer { get; set; }
         public DateTimeOffset ModifyCustomer { get; set; }
     }

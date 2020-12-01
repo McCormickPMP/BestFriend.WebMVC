@@ -48,6 +48,7 @@ namespace BestFriend.WebMVC.Controllers
 
             return View(model);
         }
+        [Route("id")]
         public ActionResult Details(int id)
         {
             var svc = CreateProductService();

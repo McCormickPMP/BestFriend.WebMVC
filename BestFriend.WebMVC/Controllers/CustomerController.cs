@@ -19,8 +19,12 @@ namespace BestFriend.WebMVC.Controllers
         
         public ActionResult Index()
         {
+
+            //var custId = Guid.Parse(User.Identity.GetUserId());
+           // var service = new CustomerService(custId);
             CustomerService customerServices = CreateCustomerService();
             var customers = customerServices.GetCustomers();
+            //var model = service.GetCustomers();
             return View(customers);
         }
        
@@ -48,7 +52,7 @@ namespace BestFriend.WebMVC.Controllers
 
             return View(model);
         }
-        //GET: Details/Customer
+        //GET: Details/Customer{id}
         public ActionResult Details(int id)
         {
             var svc = CreateCustomerService();
@@ -66,6 +70,7 @@ namespace BestFriend.WebMVC.Controllers
                     CustomerID = detail.CustomerID,
                     UserName = detail.UserName,
                     Email = detail.Email,
+                    Password = detail.Password,
                     FullName = detail.FullName
                 };
             return View(model);
@@ -119,8 +124,8 @@ namespace BestFriend.WebMVC.Controllers
         }
         private CustomerService CreateCustomerService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService(userId);
+            var custId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(custId);
             return service;
         }
     }

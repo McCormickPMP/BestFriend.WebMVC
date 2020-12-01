@@ -26,6 +26,7 @@ namespace BestFriend.Services
                     CustId = _custId,
                     UserName = model.UserName,
                     Email = model.Email,
+                    Password = model.Password,
                     FullName = model.FullName,
                     CreateCustomer = DateTimeOffset.Now
                 };
@@ -50,10 +51,12 @@ namespace BestFriend.Services
                             e =>
                                 new CustomerList
                                 {
-                                    CustomerID = e.CustomerID,
+                                    
                                     UserName = e.UserName,
                                     Email = e.Email,
+                                    Password = e.Password,
                                     FullName = e.FullName,
+                                    Address = e.Address,
                                     CreateCustomer = e.CreateCustomer,
                                     ModifyCustomer = e.ModifyCustomer
                                 }
@@ -76,6 +79,9 @@ namespace BestFriend.Services
                         CustomerID = entity.CustomerID,
                         UserName = entity.UserName,
                         Email = entity.Email,
+                        Password =entity.Password,
+                        FullName = entity.FullName,
+                        Address = entity.Address,
                         CreateCustomer = entity.CreateCustomer,
                         ModifyCustomer = entity.ModifyCustomer
                     };
@@ -92,6 +98,8 @@ namespace BestFriend.Services
 
                 entity.UserName = model.UserName;
                 entity.Email = model.Email;
+                entity.Password = model.Password;
+                entity.FullName = model.FullName;
                 entity.ModifyCustomer = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
