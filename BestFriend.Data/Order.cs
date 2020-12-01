@@ -21,16 +21,15 @@ namespace BestFriend.Data
         
         [ForeignKey(nameof(ItemId))]
         public virtual Product Product { get; set; }
-
         public int CustomerId { get; set; }
+
         [ForeignKey(nameof(CustomerId))]
         public virtual Customer Customer { get; set; }
-       
+ 
         public int StatusId { get; set; }
         [ForeignKey(nameof(StatusId))]
         public virtual Status Status { get; set; }
-
-        [Required]
+   
         public string Category { get; set; }
         public DateTimeOffset CreateOrder{ get; set; }
         public DateTimeOffset ModifyOrder { get; set; }

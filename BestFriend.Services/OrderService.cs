@@ -21,10 +21,8 @@ namespace BestFriend.Services
             var entity =
                 new Order()
                 {
-                    OrderGuid = _orderGuid,
-                    OrderId = model.OrderId,
-                    Quantity =model.Quantity,
                     ItemId = model.ItemId,
+                    Quantity = model.Quantity,
                     CustomerId = model.CustomerId,
                     StatusId = model.StatusId,
                     CreateOrder = DateTimeOffset.Now
