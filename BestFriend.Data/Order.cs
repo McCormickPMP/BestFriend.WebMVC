@@ -22,7 +22,7 @@ namespace BestFriend.Data
         //Will Add FK in next iteration
         //[ForeignKey(nameof(ItemId))]
         //public virtual Product Product { get; set; }
-        public int CustomerId { get; set; }
+        //public int CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
         public virtual Customer Customer { get; set; }

@@ -13,7 +13,7 @@ namespace BestFriend.Models.GiftModel
         
         public int GiftId { get; set; }
         public Guid DonationId { get; set; }
-        public int CustomerId { get; set; }
+        //public int CustomerId { get; set; }
         public TType TType { get; set; }
 
         public DateTimeOffset CreatedGift { get; set; }

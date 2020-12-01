@@ -81,6 +81,10 @@
     <Compile Include="Migrations\202012011854258_CommentedOutStatusIdInOrder.Designer.cs">
       <DependentUpon>202012011854258_CommentedOutStatusIdInOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012012053111_ChangedOrderClassAndReferences.cs" />
+    <Compile Include="Migrations\202012012053111_ChangedOrderClassAndReferences.Designer.cs">
+      <DependentUpon>202012012053111_ChangedOrderClassAndReferences.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012011854258_CommentedOutStatusIdInOrder.resx">
       <DependentUpon>202012011854258_CommentedOutStatusIdInOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012012053111_ChangedOrderClassAndReferences.resx">
+      <DependentUpon>202012012053111_ChangedOrderClassAndReferences.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

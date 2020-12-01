@@ -14,7 +14,7 @@ namespace BestFriend.Models.OrderModel
         //public Guid OrderGuid { get; set; }
         public int Quantity { get; set; }
         public int ItemId { get; set; }
-        public int CustomerId { get; set; }
+        //public int CustomerId { get; set; }
         //public int StatusId { get; set; }
         public DateTimeOffset CreateOrder { get; set; }
     }

@@ -49,6 +49,70 @@ namespace BestFriend.WebMVC.Controllers
             ModelState.AddModelError("", "Order could not be created.");
             return View(model);
         }
+        public ActionResult Details(int id)
+        {
+            var svc = CreateOrderService();
+            var model = svc.GetOrderById(id);
+
+            return View(model);
+        }
+        public ActionResult Edit(int id)
+        {
+            var service = CreateOrderService();
+            var detail = service.GetOrderById(id);
+            var model =
+                new OrderUpdate
+                {
+                   
+                    OrderId = detail.OrderId,
+                    Quantity = detail.Quantity,
+                    ItemId = detail.ItemId,
+                    CustomerId = detail.CustomerId
+                };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, OrderUpdate model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.OrderId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateOrderService();
+
+            if (service.UpdateOrder(model))
+            {
+                TempData["SaveResult"] = "Your order was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your order could not be updated.");
+            return View();
+        }
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateOrderService();
+            var model = svc.GetOrderById(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateOrderService();
+
+            service.DeleteOrder(id);
+
+            TempData["SaveResult"] = "Your order was deleted";
+
+            return RedirectToAction("Index");
+        }
 
         private OrderService CreateOrderService()
         {

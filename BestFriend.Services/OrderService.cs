@@ -24,7 +24,7 @@ namespace BestFriend.Services
                     OrderGuid = _orderGuid,
                     ItemId = model.ItemId,
                     Quantity = model.Quantity,
-                    CustomerId = model.CustomerId,
+                    //CustomerId = model.CustomerId,
                     //StatusId = model.StatusId,
                     CreateOrder = DateTimeOffset.Now
                 };
@@ -94,8 +94,6 @@ namespace BestFriend.Services
                 entity.CustomerId = model.CustomerId;
                 //entity.StatusId = model.StatusId;
                 entity.ModifyOrder = DateTimeOffset.Now;
-                  
-
                 return ctx.SaveChanges() == 1;
             }
         }
