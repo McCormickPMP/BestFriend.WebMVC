@@ -20,10 +20,8 @@ namespace BestFriend.Data
         public Category Category { get; set; }
 
         [ForeignKey(nameof(Customer))]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
-
-
         public DateTimeOffset CreateOrder{ get; set; }
         public DateTimeOffset ModifyOrder { get; set; }
     }

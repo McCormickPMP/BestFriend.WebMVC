@@ -78,8 +78,7 @@ namespace BestFriend.Services
                         Description = entity.Description,
                         Price = entity.Price,
                         InventoryCount = entity.InventoryCount,
-                        CreatedProduct = entity.CreatedProduct,
-                        ModifyProduct = entity.ModifyProduct
+
                     };
             }
         }
@@ -92,12 +91,12 @@ namespace BestFriend.Services
                         .Products
                         .Single(e => e.ProductId == model.ProductId );
 
-                entity.ProductId = model.ProductId;
+               // entity.ProductId = model.ProductId;
                 entity.Name = model.Name;
                 entity.Description = model.Description;
                 entity.Price = model.Price;
                 entity.InventoryCount = model.InventoryCount;
-                entity.ModifyProduct = DateTimeOffset.UtcNow;
+                //entity.ModifyProduct = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
             }

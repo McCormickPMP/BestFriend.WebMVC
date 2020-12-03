@@ -10,7 +10,7 @@ namespace BestFriend.Models.ProductModel
 {
     public class ProductCreate
     {
-
+        public int? ProductId { get; set; }
         [Required]
      
         [Display(Name = "Product Name")]
@@ -23,6 +23,7 @@ namespace BestFriend.Models.ProductModel
       
         [Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }
+        [Range(0,5)]
         public int Rating { get; set; }
 
     }

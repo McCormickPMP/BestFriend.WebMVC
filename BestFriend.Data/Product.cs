@@ -24,7 +24,7 @@ namespace BestFriend.Data
         public int Rating { get; set; }
 
         [ForeignKey(nameof(Order))]
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
         public virtual Order Order { get; set; }
         public DateTimeOffset CreatedProduct { get; set; }
         public DateTimeOffset? ModifyProduct { get; set; }
