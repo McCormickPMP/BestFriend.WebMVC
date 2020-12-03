@@ -118,7 +118,7 @@ namespace BestFriend.WebMVC.Controllers
         private OrderService CreateOrderService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new OrderService();
+            var service = new OrderService(userId);
             return service;
         }
     }

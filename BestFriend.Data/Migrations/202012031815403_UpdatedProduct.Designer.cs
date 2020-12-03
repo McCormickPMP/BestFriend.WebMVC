@@ -7,13 +7,13 @@ namespace BestFriend.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialSetUpAfterRefactor : IMigrationMetadata
+    public sealed partial class UpdatedProduct : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSetUpAfterRefactor));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedProduct));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012031437385_InitialSetUpAfterRefactor"; }
+            get { return "202012031815403_UpdatedProduct"; }
         }
         
         string IMigrationMetadata.Source

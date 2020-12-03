@@ -10,7 +10,7 @@ namespace BestFriend.Models.ProductModel
 {
     public class ProductCreate
     {
-        public int ProductId { get; set; }
+
         [Required]
      
         [Display(Name = "Product Name")]

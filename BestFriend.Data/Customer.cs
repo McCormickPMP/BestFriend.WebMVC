@@ -18,12 +18,12 @@ namespace BestFriend.Data
         //public string UserId { get; set; }
         //public virtual ApplicationUser User { get; set; }
 
-        [Required]
+     
         public virtual ICollection<Order> Orders { get; set; }
         public string  UserName { get; set; }
         [Required]
         public string  Email { get; set; }
-        [Required]
+    
         public string  Password { get; set; }
         public Class Class { get; set; }
         [Required]

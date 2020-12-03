@@ -10,14 +10,15 @@ using static BestFriend.Data.ApplicationDbContext;
 
 namespace BestFriend.Services
 {
+
     public class ProductService
     {
-        //private readonly Guid _userId;
+        private readonly Guid _userId;
 
-        //public ProductService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
+        public ProductService(Guid userId)
+        {
+           _userId = userId;
+        }
 
         public bool CreateProduct(ProductCreate model)
         {

@@ -127,7 +127,7 @@ namespace BestFriend.WebMVC.Controllers
         private ProductService CreateProductService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProductService();
+            var service = new ProductService(userId);
             return service;
         }
     }

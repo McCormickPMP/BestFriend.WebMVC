@@ -12,7 +12,7 @@ namespace BestFriend.Data
     {
        [Key]
         public int ProductId { get; set; }
-        public Category Category { get; set; }
+
         [Required]
         public string Name { get; set; }
         [Required]

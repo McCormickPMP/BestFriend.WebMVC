@@ -56,9 +56,13 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202012031437385_InitialSetUpAfterRefactor.cs" />
-    <Compile Include="Migrations\202012031437385_InitialSetUpAfterRefactor.Designer.cs">
-      <DependentUpon>202012031437385_InitialSetUpAfterRefactor.cs</DependentUpon>
+    <Compile Include="Migrations\202012031741207_UpdatedCustData.cs" />
+    <Compile Include="Migrations\202012031741207_UpdatedCustData.Designer.cs">
+      <DependentUpon>202012031741207_UpdatedCustData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012031815403_UpdatedProduct.cs" />
+    <Compile Include="Migrations\202012031815403_UpdatedProduct.Designer.cs">
+      <DependentUpon>202012031815403_UpdatedProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -70,8 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012031437385_InitialSetUpAfterRefactor.resx">
-      <DependentUpon>202012031437385_InitialSetUpAfterRefactor.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012031741207_UpdatedCustData.resx">
+      <DependentUpon>202012031741207_UpdatedCustData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012031815403_UpdatedProduct.resx">
+      <DependentUpon>202012031815403_UpdatedProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

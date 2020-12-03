@@ -14,16 +14,24 @@ namespace BestFriend.Services
     public class CustomerService
     {
         //private readonly ApplicationDbContext _context  = new ApplicationDbContext();
-       
+        private readonly Guid _userId;
+        public CustomerService(Guid userId)
+        {
+            _userId = userId;
+        }
         //CREATE
         public bool CreateCustomerService(CustomerCreate model)
         {
            var entity =
                 new Customer()
             {
+
                 UserName = model.UserName,
                 Email = model.Email,
                 FullName = model.FullName,
+                Address = model.Address,
+                City = model.City,
+                ZipCode = model.ZipCode,
                 CreateCustomer = DateTimeOffset.Now
             };
             using (var ctx = new ApplicationDbContext())
@@ -43,7 +51,7 @@ namespace BestFriend.Services
                     .Select(e =>
                         new CustomerList
                         {
-                            CustomerId = e.CustomerId,
+                            CustomerId =e.CustomerId,
                             UserName = e.UserName,
                             Email = e.Email,
                             FullName = e.FullName
@@ -67,7 +75,7 @@ namespace BestFriend.Services
                 return
                     new CustomerDetail
                     {
-                        CustomerId =entity.CustomerId,
+
                         UserName = entity.UserName,
                         Email = entity.Email,
                         FullName = entity.FullName,
@@ -83,14 +91,15 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == model.CustomerId );
+                        .Single(e => e.CustomerId == model. CustomerId);
                 entity.UserName = model.UserName;
-                entity.Orders = model.Orders;
+                //entity.Orders = model.Orders;
                 entity.Email = model.Email;
                 entity.FullName = model.FullName;
-                entity.ModifyCustomer = DateTimeOffset.UtcNow;
+
 
                 return ctx.SaveChanges() == 1;
+             
             }
         }
         public bool DeleteCustomer(int custId)

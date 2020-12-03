@@ -20,8 +20,8 @@ namespace BestFriend.WebMVC.Controllers
         public ActionResult Index()
         {
 
-           
-            var service = new CustomerService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(userId);
             var model = service.GetCustomers();
 
             return View(model);
@@ -124,7 +124,7 @@ namespace BestFriend.WebMVC.Controllers
         private CustomerService CreateCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService();
+            var service = new CustomerService(userId);
             return service;
         }
     }

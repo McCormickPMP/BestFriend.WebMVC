@@ -11,6 +11,11 @@ namespace BestFriend.Services
 {
     public class OrderService
     {
+        private readonly Guid _userId;
+        public OrderService(Guid userId)
+        {
+            _userId = userId;
+        }
         //CREATE
         public bool CreateOrder(OrderCreate model)
         {
