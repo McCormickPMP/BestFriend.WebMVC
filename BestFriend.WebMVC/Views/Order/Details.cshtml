@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Order Details</h2>
 
 <div>
-    <h4>OrderDetail</h4>
+    <h4>Order Detail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,11 +19,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.OrderGuid)
+            @Html.DisplayNameFor(model => model.CustomerId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.OrderGuid)
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductId)
         </dd>
 
         <dt>
@@ -32,22 +40,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Quantity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ItemId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustomerId)
         </dd>
 
         <dt>
@@ -69,8 +61,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemId }) |
-
-  
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

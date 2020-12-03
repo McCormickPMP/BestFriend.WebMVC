@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Products</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Product Detail</h4>
+    <h4>ProductDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
@@ -86,6 +86,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
-    @Html.ActionLink("Remove", "Delete", new { id = Model.ProductId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

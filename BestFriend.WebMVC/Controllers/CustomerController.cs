@@ -78,11 +78,11 @@ namespace BestFriend.WebMVC.Controllers
         //POST: Customer/Update/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Order orders, CustomerUpdate model)
+        public ActionResult Edit(int id, CustomerUpdate model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.Orders != orders)
+            if (model.CustomerId != id)
             {
                 ModelState.AddModelError("", "Id Mistmatch");
                 return View(model);
