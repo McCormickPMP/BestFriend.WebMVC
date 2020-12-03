@@ -1,4 +1,5 @@
 ﻿using System;
+using BestFriend.Data;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,20 +10,13 @@ namespace BestFriend.Models.CustomerModel
 {
     public class CustomerDetail
     {
-        public int CustomerID { get; set; }
-      
-        public Guid CustId { get; set; }
-       
+        public int CustomerId { get; set; }
         public string UserName { get; set; }
-    
+      [Required]
         public string Email { get; set; }
-      
-        public string Password { get; set; }
-        
+      [Required]
         public string FullName { get; set; }
-        public string Address { get; set; }
-        //public string City { get; set; }
-       //public int ZipCode { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         public DateTimeOffset CreateCustomer { get; set; }
         public DateTimeOffset ModifyCustomer { get; set; }
     }

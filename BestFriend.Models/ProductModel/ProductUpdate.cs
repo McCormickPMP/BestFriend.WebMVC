@@ -10,11 +10,10 @@ namespace BestFriend.Models.ProductModel
     public class ProductUpdate
     {
         public int ProductId { get; set; }
-
         public string Category { get; set; }
-      
+        [Required]
         [Display(Name = "Product Name")]
-        public string Title { get; set; }
+        public string Name { get; set; }
        
         public string Description { get; set; }
         
@@ -23,7 +22,6 @@ namespace BestFriend.Models.ProductModel
         [Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }
         public int Rating { get; set; }
-        public DateTimeOffset CreatedProduct { get; set; }
         public DateTimeOffset? ModifyProduct { get; set; }
 
     }

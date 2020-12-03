@@ -14,26 +14,17 @@ namespace BestFriend.Data
         [Key]
         public int OrderId { get; set; }
         [Required]
-        public Guid OrderGuid { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
         [Required]
         public int Quantity { get; set; }
-       
-        public int ItemId { get; set; }
-        //Will Add FK in next iteration
-        //[ForeignKey(nameof(ItemId))]
-        //public virtual Product Product { get; set; }
-        //public int CustomerId { get; set; }
+        public Category Category { get; set; }
 
-       // [ForeignKey(nameof(CustomerId))]
-       // public virtual Customer Customer { get; set; }
-        //Will Add FK in next iteration
-        //public int StatusId { get; set; }
-        //[ForeignKey(nameof(StatusId))]
-        //public virtual Status Status { get; set; }
-   
-        public string Category { get; set; }
+        [ForeignKey(nameof(Customer))]
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
+
+
         public DateTimeOffset CreateOrder{ get; set; }
         public DateTimeOffset ModifyOrder { get; set; }
-
     }
 }

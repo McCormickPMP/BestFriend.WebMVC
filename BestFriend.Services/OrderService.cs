@@ -1,4 +1,5 @@
 ﻿using BestFriend.Data;
+using BestFriend.Models;
 using BestFriend.Models.OrderModel;
 using System;
 using System.Collections.Generic;
@@ -10,22 +11,15 @@ namespace BestFriend.Services
 {
     public class OrderService
     {
-        private readonly Guid _orderGuid;
-
-        public OrderService(Guid orderGuid)
-        {
-            _orderGuid = orderGuid;
-        }
+        //CREATE
         public bool CreateOrder(OrderCreate model)
         {
             var entity =
                 new Order()
                 {
-                    OrderGuid = _orderGuid,
-                    ItemId = model.ItemId,
+                    CustomerId = model.CustomerId,
+                    Products = model.Products,
                     Quantity = model.Quantity,
-                    //CustomerId = model.CustomerId,
-                    //StatusId = model.StatusId,
                     CreateOrder = DateTimeOffset.Now
                 };
 
@@ -43,15 +37,13 @@ namespace BestFriend.Services
                 var query =
                     ctx
                         .Orders
-                        .Where(e => e.OrderGuid == _orderGuid)
                         .Select(e =>
                                 new OrderListItem
                                 {
                                     OrderId = e.OrderId,
+                                    CustomerId = e.OrderId,
+                                    Products = e.Products,
                                     Quantity = e.Quantity,
-                                    ItemId = e.ItemId,
-                                    //CustomerId = e.CustomerId,
-                                    //StatusId = e.StatusId,
                                     CreateOrder = DateTimeOffset.Now
                                 }
                         );
@@ -66,15 +58,14 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == id && e.OrderGuid == _orderGuid);
+                        .Single(e => e.OrderId == id);
                 return
                     new OrderDetail
                     {
                         OrderId = entity.OrderId,
+                        CustomerId = entity.OrderId,
+                        Products = entity.Products,
                         Quantity = entity.Quantity,
-                        ItemId = entity.ItemId,
-                        //CustomerId = entity.CustomerId,
-                       // StatusId = entity.StatusId,
                         CreateOrder = DateTimeOffset.Now
                     };
             }
@@ -86,13 +77,11 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == model.OrderId && e.OrderGuid == _orderGuid);
+                        .Single(e => e.OrderId == model.OrderId);
 
                 entity.OrderId = model.OrderId;
+                entity.CustomerId = model.CustomerId;
                 entity.Quantity = model.Quantity;
-                entity.ItemId = model.ItemId;
-                //entity.CustomerId = model.CustomerId;
-                //entity.StatusId = model.StatusId;
                 entity.ModifyOrder = DateTimeOffset.Now;
                 return ctx.SaveChanges() == 1;
             }
@@ -104,7 +93,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == orderId && e.OrderGuid == _orderGuid);
+                        .Single(e => e.OrderId == orderId);
 
                 ctx.Orders.Remove(entity);
 

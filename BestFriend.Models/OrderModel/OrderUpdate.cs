@@ -9,12 +9,10 @@ namespace BestFriend.Models.OrderModel
     public class OrderUpdate
     {
         public int OrderId { get; set; }
-        public Guid OrderGuid { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
         public int Quantity { get; set; }
         public int ItemId { get; set; }
-        //public int CustomerId { get; set; }
-        //public int StatusId { get; set; }
-        public DateTimeOffset CreateOrder { get; set; }
         public DateTimeOffset ModifyOrder { get; set; }
     }
 }

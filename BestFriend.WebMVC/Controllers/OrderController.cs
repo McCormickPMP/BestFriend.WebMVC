@@ -13,18 +13,18 @@ namespace BestFriend.WebMVC.Controllers
     [Authorize]
     public class OrderController : Controller
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();
+       // private ApplicationDbContext _db = new ApplicationDbContext();
        
         // GET: Order/Index
         public ActionResult Index()
         {
-            var orderGuid = Guid.Parse(User.Identity.GetUserId());
-            var service = new OrderService(orderGuid);
-            var model = service.GetOrders();
-            return View(model);
-           // OrderService orderServices = CreateOrderService();
-            //var orders = orderServices.GetOrders();
-            //return View(orders);
+            //var orderGuid = Guid.Parse(User.Identity.GetUserId());
+            //var service = new OrderService(orderGuid);
+            //var model = service.GetOrders();
+            //return View(model);
+           OrderService orderServices = CreateOrderService();
+            var orders = orderServices.GetOrders();
+            return View(orders);
             //var model = new OrderListItem[0];
             //return View(model);
         }
@@ -65,9 +65,10 @@ namespace BestFriend.WebMVC.Controllers
                 {
                    
                     OrderId = detail.OrderId,
+                    CustomerId = detail.CustomerId,
+                    ProductId = detail.ProductId,
                     Quantity = detail.Quantity,
-                    ItemId = detail.ItemId,
-                    //CustomerId = detail.CustomerId
+
                 };
             return View(model);
         }
@@ -116,8 +117,8 @@ namespace BestFriend.WebMVC.Controllers
 
         private OrderService CreateOrderService()
         {
-            var orderGuid = Guid.Parse(User.Identity.GetUserId());
-            var service = new OrderService(orderGuid);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new OrderService();
             return service;
         }
     }

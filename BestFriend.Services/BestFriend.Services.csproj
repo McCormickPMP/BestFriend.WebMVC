@@ -55,13 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerService.cs" />
-    <Compile Include="GiftService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusService.cs" />
-    <Compile Include="SupplierService.cs" />
-    <Compile Include="WishService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

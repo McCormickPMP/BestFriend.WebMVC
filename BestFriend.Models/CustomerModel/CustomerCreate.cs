@@ -10,22 +10,22 @@ namespace BestFriend.Models.CustomerModel
 {
     public class CustomerCreate
     {
-        [Required]
+        public int CustomerId { get; set; }
         [Display(Name = "User Name")]
         public string UserName { get; set; }
-       
-        [DataType(DataType.EmailAddress)]
+        [Required]
         public string Email { get; set; }
-        
-        
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
+
        
        [Display(Name ="Enter Full Name")]
         public string FullName { get; set; }
-  
-      
-       
+        public string Address { get; set; }
+        public string City { get; set; }
+        public int ZipCode { get; set; }
+        public DateTimeOffset CreateCustomer { get; set; }
+
+
+
     }
 }
 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 
 namespace BestFriend.WebMVC.Controllers
 {
@@ -15,7 +16,7 @@ namespace BestFriend.WebMVC.Controllers
     
     public class ProductController : Controller
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();
+        //private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Product/Index
         public ActionResult Index()
         {
@@ -23,6 +24,8 @@ namespace BestFriend.WebMVC.Controllers
             var products = productServices.GetProducts();
             return View(products);
         }
+
+        //CREATE
         public ActionResult Create()
         {
             return View();
@@ -48,6 +51,8 @@ namespace BestFriend.WebMVC.Controllers
 
             return View(model);
         }
+
+        //GET Product/Details/{id}
         [Route("id")]
         public ActionResult Details(int id)
         {
@@ -56,6 +61,7 @@ namespace BestFriend.WebMVC.Controllers
 
             return View(model);
         }
+        //UPDATE
         public ActionResult Edit(int id)
         {
             var service = CreateProductService();
@@ -63,9 +69,11 @@ namespace BestFriend.WebMVC.Controllers
             var model =
                 new ProductUpdate
                 {
-                    ProductId = detail.ProductId,
-                    Title = detail.Title,
+                    Name = detail.Name,
                     Description = detail.Description,
+                    Price = detail.Price,
+                    InventoryCount = detail.InventoryCount,
+                    ModifyProduct = detail.ModifyProduct
                 };
             return View(model);
 
@@ -79,7 +87,7 @@ namespace BestFriend.WebMVC.Controllers
 
             if (model.ProductId != id)
             {
-                ModelState.AddModelError("", "Id Mistmatch");
+                ModelState.AddModelError("", "Name Mistmatch");
                 return View(model);
             }
 
@@ -119,7 +127,7 @@ namespace BestFriend.WebMVC.Controllers
         private ProductService CreateProductService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProductService(userId);
+            var service = new ProductService();
             return service;
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BestFriend.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace BestFriend.Models.OrderModel
     public class OrderDetail
     {
         public int OrderId { get; set; }
-        public Guid OrderGuid { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
         public int Quantity { get; set; }
-        public int ItemId { get; set; }
-        //public int CustomerId { get; set; }
-        //public int StatusId { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CreateOrder { get; set; }
         [Display(Name = "Modified")]

@@ -12,18 +12,19 @@ namespace BestFriend.Services
 {
     public class ProductService
     {
-        private readonly Guid _ownerId;
-        public ProductService(Guid ownerId)
-        {
-            _ownerId = ownerId;
-        }
+        //private readonly Guid _userId;
+
+        //public ProductService(Guid userId)
+        //{
+        //    _userId = userId;
+        //}
+
         public bool CreateProduct(ProductCreate model)
         {
             var entity =
                 new Product()
                 {
-                    OwnerId = _ownerId,
-                    Title = model.Title,
+                    Name = model.Name,
                     Description = model.Description,
                     Price = model.Price,
                     InventoryCount= model.InventoryCount,
@@ -48,7 +49,7 @@ namespace BestFriend.Services
                                 new ProductListItem
                                 {
                                     ProductId = e.ProductId,
-                                    Title = e.Title,
+                                    Name = e.Name,
                                     Description = e.Description,
                                     Price = e.Price,
                                     InventoryCount = e.InventoryCount,
@@ -72,7 +73,7 @@ namespace BestFriend.Services
                     new ProductDetail
                     {
                         ProductId = entity.ProductId,
-                        Title = entity.Title,
+                        Name = entity.Name,
                         Description = entity.Description,
                         Price = entity.Price,
                         InventoryCount = entity.InventoryCount,
@@ -91,7 +92,7 @@ namespace BestFriend.Services
                         .Single(e => e.ProductId == model.ProductId );
 
                 entity.ProductId = model.ProductId;
-                entity.Title = model.Title;
+                entity.Name = model.Name;
                 entity.Description = model.Description;
                 entity.Price = model.Price;
                 entity.InventoryCount = model.InventoryCount;

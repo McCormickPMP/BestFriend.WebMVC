@@ -32,10 +32,10 @@ namespace BestFriend.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Gift> Gifts { get; set; }
-        public DbSet<Status> Statuses { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<WishList> WishLists { get; set; }
+        //public DbSet<Gift> Gifts { get; set; }
+        //public DbSet<Status> Statuses { get; set; }
+        //public DbSet<Supplier> Suppliers { get; set; }
+        //public DbSet<WishList> WishLists { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

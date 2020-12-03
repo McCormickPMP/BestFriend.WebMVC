@@ -58,10 +58,6 @@
     <Compile Include="CustomerModel\CustomerDetail.cs" />
     <Compile Include="CustomerModel\CustomerList.cs" />
     <Compile Include="CustomerModel\CustomerUpdate.cs" />
-    <Compile Include="GiftModel\GiftCreate.cs" />
-    <Compile Include="GiftModel\GiftDetail.cs" />
-    <Compile Include="GiftModel\GiftListItem.cs" />
-    <Compile Include="GiftModel\GiftUpdate.cs" />
     <Compile Include="OrderModel\OrderCreate.cs" />
     <Compile Include="OrderModel\OrderDetail.cs" />
     <Compile Include="OrderModel\OrderListItem.cs" />
@@ -71,23 +67,16 @@
     <Compile Include="ProductModel\ProductListItem.cs" />
     <Compile Include="ProductModel\ProductUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusModel\StatusCreate.cs" />
-    <Compile Include="StatusModel\StatusDetail.cs" />
-    <Compile Include="StatusModel\StatusListItem.cs" />
-    <Compile Include="StatusModel\StatusUpdate.cs" />
-    <Compile Include="SupplierModel\SupplierCreate.cs" />
-    <Compile Include="SupplierModel\SupplierDetail.cs" />
-    <Compile Include="SupplierModel\SupplierListItem.cs" />
-    <Compile Include="SupplierModel\SupplierUpdate.cs" />
-    <Compile Include="WishListModel\WishCreate.cs" />
-    <Compile Include="WishListModel\WishDetail.cs" />
-    <Compile Include="WishListModel\WishListItem.cs" />
-    <Compile Include="WishListModel\WishUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BestFriend.Data\BestFriend.Data.csproj">
+      <Project>{882fb6b2-febc-4953-94d4-72e0e49bd5ca}</Project>
+      <Name>BestFriend.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

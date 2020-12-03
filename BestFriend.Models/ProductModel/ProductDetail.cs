@@ -9,14 +9,14 @@ namespace BestFriend.Models.ProductModel
 {
     public class ProductDetail
     {
-        public int ProductId { get; set; }
 
+        public int ProductId { get; set; }
         public string Category { get; set; }
-      
-        public string Title { get; set; }
-    
+        [Required]
+        public string Name { get; set; }
+        [Required]
         public string Description { get; set; }
-       
+        [Required]
         public decimal Price { get; set; }
   
         public int InventoryCount { get; set; }

@@ -14,18 +14,17 @@ namespace BestFriend.WebMVC.Controllers
     [Authorize]
     public class CustomerController : Controller
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();
-        // GET: Customer/Index
+        //private ApplicationDbContext _db = new ApplicationDbContext();
+        // GET: Customer
         
         public ActionResult Index()
         {
 
-            //var custId = Guid.Parse(User.Identity.GetUserId());
-           // var service = new CustomerService(custId);
-            CustomerService customerServices = CreateCustomerService();
-            var customers = customerServices.GetCustomers();
-            //var model = service.GetCustomers();
-            return View(customers);
+           
+            var service = new CustomerService();
+            var model = service.GetCustomers();
+
+            return View(model);
         }
        
         public ActionResult Create()
@@ -43,7 +42,7 @@ namespace BestFriend.WebMVC.Controllers
 
             var service = CreateCustomerService();
 
-            if (service.CreateCustomer(model))
+            if (service.CreateCustomerService(model))
             {
                 TempData["SaveResult"] = "Customer was created.";
                 return RedirectToAction("Index");
@@ -67,11 +66,11 @@ namespace BestFriend.WebMVC.Controllers
             var model =
                 new CustomerUpdate
                 {
-                    CustomerID = detail.CustomerID,
-                    UserName = detail.UserName,
+
+                    Orders = detail.Orders,
                     Email = detail.Email,
-                    Password = detail.Password,
                     FullName = detail.FullName
+                    
                 };
             return View(model);
 
@@ -79,11 +78,11 @@ namespace BestFriend.WebMVC.Controllers
         //POST: Customer/Update/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, CustomerUpdate model)
+        public ActionResult Edit(Order orders, CustomerUpdate model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.CustomerID != id)
+            if (model.Orders != orders)
             {
                 ModelState.AddModelError("", "Id Mistmatch");
                 return View(model);
@@ -124,8 +123,8 @@ namespace BestFriend.WebMVC.Controllers
         }
         private CustomerService CreateCustomerService()
         {
-            var custId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService(custId);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService();
             return service;
         }
     }
