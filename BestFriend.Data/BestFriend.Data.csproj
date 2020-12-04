@@ -56,6 +56,11 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202012041610286_UpdatedCode.cs" />
+    <Compile Include="Migrations\202012041610286_UpdatedCode.Designer.cs">
+      <DependentUpon>202012041610286_UpdatedCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +68,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012041610286_UpdatedCode.resx">
+      <DependentUpon>202012041610286_UpdatedCode.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

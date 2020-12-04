@@ -14,7 +14,7 @@ namespace BestFriend.Models.OrderModel
         public string Email { get; set; }
         public Category Category { get; set; }
         public int ProductId { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+
         public int Quantity { get; set; }
 
     }

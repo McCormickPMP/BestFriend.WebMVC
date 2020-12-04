@@ -26,7 +26,6 @@ namespace BestFriend.Services
                     CustomerId = model.CustomerId,
                     Email = model.Email,
                     Category = model.Category,
-                    Products = model.Products,
                     ProductId = model.ProductId,
                     Quantity = model.Quantity,
 
@@ -54,7 +53,7 @@ namespace BestFriend.Services
                                     Email = e.Email,
                                     Category = e.Category,
                                     ProductId = e.ProductId,
-                                    Products = e.Products,
+  
                                     Quantity = e.Quantity,
 
                                 }

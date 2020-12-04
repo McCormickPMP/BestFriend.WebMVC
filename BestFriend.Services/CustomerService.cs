@@ -55,7 +55,8 @@ namespace BestFriend.Services
                             CustomerId =e.CustomerId,
                             UserName = e.UserName,
                             Email = e.Email,
-                            FullName = e.FullName
+                            FullName = e.FullName,
+                            Orders = e.Orders
                         }
                    );
                 return query.ToArray();
@@ -76,7 +77,7 @@ namespace BestFriend.Services
                 return
                     new CustomerDetail
                     {
-
+                        CustomerId = entity.CustomerId,
                         UserName = entity.UserName,
                         Email = entity.Email,
                         FullName = entity.FullName,
@@ -92,9 +93,9 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == model. CustomerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
                 entity.UserName = model.UserName;
-                //entity.Orders = model.Orders;
+                entity.Orders = model.Orders;
                 entity.Email = model.Email;
                 entity.FullName = model.FullName;
 

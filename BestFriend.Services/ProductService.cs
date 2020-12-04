@@ -59,7 +59,7 @@ namespace BestFriend.Services
                                     Price = e.Price,
                                     Rating = e.Rating,
                                     InventoryCount = e.InventoryCount,
-                                                                   }
+                                }
                         );
 
                 return query.ToArray();
@@ -98,6 +98,7 @@ namespace BestFriend.Services
 
                 entity.ProductId = model.ProductId;
                 entity.Name = model.Name;
+                entity.Category = model.Category;
                 entity.Description = model.Description;
                 entity.Price = model.Price;
                 entity.Rating = model.Rating;

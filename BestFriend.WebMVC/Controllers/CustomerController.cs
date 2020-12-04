@@ -66,7 +66,7 @@ namespace BestFriend.WebMVC.Controllers
             var model =
                 new CustomerUpdate
                 {
-
+                    CustomerId = detail.CustomerId,
                     Orders = detail.Orders,
                     Email = detail.Email,
                     FullName = detail.FullName

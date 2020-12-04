@@ -66,25 +66,11 @@
             @Html.DisplayFor(model => model.Rating)
         </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.CreatedProduct)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedProduct)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifyProduct)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifyProduct)
-        </dd>*@
-
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ProductId }) |
+
     @Html.ActionLink("Back to List", "Index")
 </p>
