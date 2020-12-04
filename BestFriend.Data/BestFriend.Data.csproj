@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202012032112122_ClearedDb.Designer.cs">
       <DependentUpon>202012032112122_ClearedDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012041304575_AddedGuidToDataSets.cs" />
+    <Compile Include="Migrations\202012041304575_AddedGuidToDataSets.Designer.cs">
+      <DependentUpon>202012041304575_AddedGuidToDataSets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012032112122_ClearedDb.resx">
       <DependentUpon>202012032112122_ClearedDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041304575_AddedGuidToDataSets.resx">
+      <DependentUpon>202012041304575_AddedGuidToDataSets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
