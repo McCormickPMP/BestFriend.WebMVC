@@ -22,6 +22,7 @@ namespace BestFriend.Services
             var entity =
                 new Order()
                 {
+                    OwnerId = _userId,
                     CustomerId = model.CustomerId,
                     Email = model.Email,
                     Products = model.Products,
@@ -64,7 +65,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == id);
+                        .Single(e => e.OrderId == id && e.OwnerId == _userId);
                 return
                     new OrderDetail
                     {
@@ -83,7 +84,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == model.OrderId);
+                        .Single(e => e.OrderId == model.OrderId && e.OwnerId == _userId);
 
                 entity.OrderId = model.OrderId;
                 entity.CustomerId = model.CustomerId;
@@ -98,7 +99,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == orderId);
+                        .Single(e => e.OrderId == orderId && e.OwnerId == _userId);
 
                 ctx.Orders.Remove(entity);
 

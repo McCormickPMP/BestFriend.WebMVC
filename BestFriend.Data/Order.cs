@@ -15,6 +15,8 @@ namespace BestFriend.Data
         public int OrderId { get; set; }
         public string Email { get; set; }
         [Required]
+        public Guid OwnerId { get; set; }
+        [Required]
         public virtual ICollection<Product> Products { get; set; }
         [Required]
         public int Quantity { get; set; }

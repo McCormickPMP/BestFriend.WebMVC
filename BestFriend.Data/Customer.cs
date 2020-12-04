@@ -17,8 +17,9 @@ namespace BestFriend.Data
         //[ForeignKey(nameof(User))]
         //public string UserId { get; set; }
         //public virtual ApplicationUser User { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
 
-     
         public virtual ICollection<Order> Orders { get; set; }
         public string  UserName { get; set; }
         [Required]

@@ -25,6 +25,7 @@ namespace BestFriend.Services
             var entity =
                 new Product()
                 {
+                    OwnerId = _userId,
                     Name = model.Name,
                     Description = model.Description,
                     Price = model.Price,
@@ -44,7 +45,7 @@ namespace BestFriend.Services
                 var query =
                     ctx
                         .Products
-                        //.Where(e => e.OwnerId == _ownerId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new ProductListItem
@@ -69,7 +70,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == id );
+                        .Single(e => e.ProductId == id && e.OwnerId == _userId);
                 return
                     new ProductDetail
                     {
@@ -89,7 +90,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == model.ProductId );
+                        .Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
 
                // entity.ProductId = model.ProductId;
                 entity.Name = model.Name;
@@ -108,7 +109,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == productId );
+                        .Single(e => e.ProductId == productId && e.OwnerId ==_userId );
 
                 ctx.Products.Remove(entity);
 

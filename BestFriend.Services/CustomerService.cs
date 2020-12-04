@@ -25,7 +25,7 @@ namespace BestFriend.Services
            var entity =
                 new Customer()
             {
-
+                OwnerId = _userId,
                 UserName = model.UserName,
                 Email = model.Email,
                 FullName = model.FullName,
@@ -48,6 +48,7 @@ namespace BestFriend.Services
                 var query =
                     ctx
                     .Customers
+                    .Where(e => e.OwnerId == _userId)
                     .Select(e =>
                         new CustomerList
                         {
@@ -71,7 +72,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == id);
+                        .Single(e => e.CustomerId == id && e.OwnerId == _userId);
                 return
                     new CustomerDetail
                     {
@@ -91,7 +92,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == model. CustomerId);
+                        .Single(e => e.CustomerId == model. CustomerId && e.OwnerId == _userId);
                 entity.UserName = model.UserName;
                 //entity.Orders = model.Orders;
                 entity.Email = model.Email;
@@ -109,7 +110,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == custId );
+                        .Single(e => e.CustomerId == custId && e.OwnerId == _userId);
 
                 ctx.Customers.Remove(entity);
 
