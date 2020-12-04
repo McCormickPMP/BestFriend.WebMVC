@@ -20,6 +20,7 @@ namespace BestFriend.Data
         public virtual ICollection<Product> Products { get; set; }
         [Required]
         public int Quantity { get; set; }
+        public int ProductId { get; set; }
         public Category Category { get; set; }
 
         [ForeignKey(nameof(Customer))]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BestFriend.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,19 +11,20 @@ namespace BestFriend.Models.ProductModel
     public class ProductUpdate
     {
         public int ProductId { get; set; }
-        public string Category { get; set; }
+       
         [Required]
         [Display(Name = "Product Name")]
         public string Name { get; set; }
        
         public string Description { get; set; }
-        
+        public Category Category { get; set; }
         public decimal Price { get; set; }
-        
+        [Range(0, 5)]
+        public int Rating { get; set; }
         [Display(Name = "# In Stock")]
         public int InventoryCount { get; set; }
-        public int Rating { get; set; }
-        public DateTimeOffset? ModifyProduct { get; set; }
+        
+       
 
     }
 }

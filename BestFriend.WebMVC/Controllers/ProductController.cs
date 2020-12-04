@@ -71,9 +71,11 @@ namespace BestFriend.WebMVC.Controllers
                 {
                     Name = detail.Name,
                     Description = detail.Description,
+                    Category = detail.Category,
                     Price = detail.Price,
+                    Rating = detail.Rating,
                     InventoryCount = detail.InventoryCount,
-                    ModifyProduct = detail.ModifyProduct
+                   
                 };
             return View(model);
 

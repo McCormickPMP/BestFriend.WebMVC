@@ -64,9 +64,11 @@ namespace BestFriend.WebMVC.Controllers
                 new OrderUpdate
                 {
                      OrderId = detail.OrderId,
-                    CustomerId = detail.CustomerId,
-                    ProductId = detail.ProductId,
-                    Quantity = detail.Quantity,
+                     CustomerId = detail.CustomerId,
+                     Email = detail.Email,
+                     Category = detail.Category,
+                     Products = detail.Products,
+                     Quantity = detail.Quantity,
                 };
             return View(model);
         }

@@ -10,7 +10,9 @@ namespace BestFriend.Models.OrderModel
     public class OrderListItem
     {
         public int OrderId { get; set; }
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
+        public string Email { get; set; }
+        public Category Category { get; set; }
         public int ProductId { get; set; }
         public virtual ICollection<Product> Products { get; set; }
         public int Quantity { get; set; }

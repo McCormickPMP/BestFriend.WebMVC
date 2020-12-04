@@ -22,10 +22,12 @@ namespace BestFriend.Services
             var entity =
                 new Order()
                 {
-                    OwnerId = _userId,
+                    //OwnerId = _userId,
                     CustomerId = model.CustomerId,
                     Email = model.Email,
+                    Category = model.Category,
                     Products = model.Products,
+                    ProductId = model.ProductId,
                     Quantity = model.Quantity,
 
                 };
@@ -48,7 +50,10 @@ namespace BestFriend.Services
                                 new OrderListItem
                                 {
                                     OrderId = e.OrderId,
-                                    CustomerId = e.OrderId,
+                                    CustomerId = e.CustomerId,
+                                    Email = e.Email,
+                                    Category = e.Category,
+                                    ProductId = e.ProductId,
                                     Products = e.Products,
                                     Quantity = e.Quantity,
 
@@ -70,7 +75,9 @@ namespace BestFriend.Services
                     new OrderDetail
                     {
                         OrderId = entity.OrderId,
-                        CustomerId = entity.OrderId,
+                        CustomerId = entity.CustomerId,
+                        Email = entity.Email,
+                        Category = entity.Category,
                         Products = entity.Products,
                         Quantity = entity.Quantity,
 

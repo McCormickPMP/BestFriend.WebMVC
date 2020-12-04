@@ -27,10 +27,12 @@ namespace BestFriend.Services
                 {
                     OwnerId = _userId,
                     Name = model.Name,
+                    Category = model.Category,
                     Description = model.Description,
                     Price = model.Price,
+                    Rating = model.Rating,
                     InventoryCount= model.InventoryCount,
-                    CreatedProduct = DateTimeOffset.Now
+                  
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -52,12 +54,12 @@ namespace BestFriend.Services
                                 {
                                     ProductId = e.ProductId,
                                     Name = e.Name,
+                                    Category = e.Category,
                                     Description = e.Description,
                                     Price = e.Price,
+                                    Rating = e.Rating,
                                     InventoryCount = e.InventoryCount,
-                                    CreatedProduct = e.CreatedProduct,
-                                    ModifyProduct = e.ModifyProduct
-                                }
+                                                                   }
                         );
 
                 return query.ToArray();
@@ -75,9 +77,11 @@ namespace BestFriend.Services
                     new ProductDetail
                     {
                         ProductId = entity.ProductId,
+                        Category = entity.Category,
                         Name = entity.Name,
                         Description = entity.Description,
                         Price = entity.Price,
+                        Rating = entity.Rating,
                         InventoryCount = entity.InventoryCount,
 
                     };
@@ -92,12 +96,13 @@ namespace BestFriend.Services
                         .Products
                         .Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
 
-               // entity.ProductId = model.ProductId;
+                entity.ProductId = model.ProductId;
                 entity.Name = model.Name;
                 entity.Description = model.Description;
                 entity.Price = model.Price;
+                entity.Rating = model.Rating;
                 entity.InventoryCount = model.InventoryCount;
-                //entity.ModifyProduct = DateTimeOffset.UtcNow;
+               
 
                 return ctx.SaveChanges() == 1;
             }

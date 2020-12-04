@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace BestFriend.Data
 {
+
     public class Product
     {
        [Key]
         public int ProductId { get; set; }
+        public Category Category { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }
@@ -29,7 +31,6 @@ namespace BestFriend.Data
         [ForeignKey(nameof(Order))]
         public int? OrderId { get; set; }
         public virtual Order Order { get; set; }
-        public DateTimeOffset CreatedProduct { get; set; }
-        public DateTimeOffset? ModifyProduct { get; set; }
+       
     }
 }
