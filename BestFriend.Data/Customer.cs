@@ -32,8 +32,6 @@ namespace BestFriend.Data
         public string Address { get; set; }
         public string City { get; set; }
         public int ZipCode { get; set; }
-        public DateTimeOffset CreateCustomer { get; set; }
-        public DateTimeOffset ModifyCustomer { get; set; }
-        
+               
     }
 }

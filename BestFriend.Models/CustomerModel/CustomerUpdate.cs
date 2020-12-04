@@ -16,6 +16,6 @@ namespace BestFriend.Models.CustomerModel
         public virtual ICollection<Order> Orders { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
-        //public DateTimeOffset ModifyCustomer { get; set; }
+       
     }
 }
