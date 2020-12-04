@@ -32,7 +32,7 @@ namespace BestFriend.Services
                 Address = model.Address,
                 City = model.City,
                 ZipCode = model.ZipCode,
-                CreateCustomer = DateTimeOffset.Now
+
             };
             using (var ctx = new ApplicationDbContext())
             { 

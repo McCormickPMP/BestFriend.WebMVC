@@ -56,31 +56,6 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202012032112122_ClearedDb.cs" />
-    <Compile Include="Migrations\202012032112122_ClearedDb.Designer.cs">
-      <DependentUpon>202012032112122_ClearedDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041304575_AddedGuidToDataSets.cs" />
-    <Compile Include="Migrations\202012041304575_AddedGuidToDataSets.Designer.cs">
-      <DependentUpon>202012041304575_AddedGuidToDataSets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041324226_PlayedWOrderProdId.cs" />
-    <Compile Include="Migrations\202012041324226_PlayedWOrderProdId.Designer.cs">
-      <DependentUpon>202012041324226_PlayedWOrderProdId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041446549_UpdatedProduct.cs" />
-    <Compile Include="Migrations\202012041446549_UpdatedProduct.Designer.cs">
-      <DependentUpon>202012041446549_UpdatedProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041535464_UpdatedOrdering.cs" />
-    <Compile Include="Migrations\202012041535464_UpdatedOrdering.Designer.cs">
-      <DependentUpon>202012041535464_UpdatedOrdering.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041552184_UpdatedOrder.cs" />
-    <Compile Include="Migrations\202012041552184_UpdatedOrder.Designer.cs">
-      <DependentUpon>202012041552184_UpdatedOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,26 +63,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012032112122_ClearedDb.resx">
-      <DependentUpon>202012032112122_ClearedDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041304575_AddedGuidToDataSets.resx">
-      <DependentUpon>202012041304575_AddedGuidToDataSets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041324226_PlayedWOrderProdId.resx">
-      <DependentUpon>202012041324226_PlayedWOrderProdId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041446549_UpdatedProduct.resx">
-      <DependentUpon>202012041446549_UpdatedProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041535464_UpdatedOrdering.resx">
-      <DependentUpon>202012041535464_UpdatedOrdering.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041552184_UpdatedOrder.resx">
-      <DependentUpon>202012041552184_UpdatedOrder.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
