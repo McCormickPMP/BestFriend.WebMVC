@@ -13,6 +13,7 @@ namespace BestFriend.Data
     {
         [Key]
         public int OrderId { get; set; }
+        public string Email { get; set; }
         [Required]
         public virtual ICollection<Product> Products { get; set; }
         [Required]
@@ -22,7 +23,6 @@ namespace BestFriend.Data
         [ForeignKey(nameof(Customer))]
         public int? CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
-        public DateTimeOffset CreateOrder{ get; set; }
-        public DateTimeOffset ModifyOrder { get; set; }
+
     }
 }

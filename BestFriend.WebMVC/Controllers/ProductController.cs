@@ -16,7 +16,7 @@ namespace BestFriend.WebMVC.Controllers
     
     public class ProductController : Controller
     {
-        //private ApplicationDbContext _db = new ApplicationDbContext();
+       // private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Product/Index
         public ActionResult Index()
         {

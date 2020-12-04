@@ -15,10 +15,6 @@ namespace BestFriend.Models.OrderModel
         public int ProductId { get; set; }
         public virtual ICollection<Product> Products { get; set; }
         public int Quantity { get; set; }
-
-        [Display(Name = "Created")]
-        public DateTimeOffset CreateOrder { get; set; }
-        [Display(Name = "Modified")]
-        public DateTimeOffset ModifyOrder { get; set; }
     }
+
 }

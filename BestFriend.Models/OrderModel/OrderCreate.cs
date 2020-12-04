@@ -11,7 +11,7 @@ namespace BestFriend.Models.OrderModel
 {
     public class OrderCreate
     {
-        [Required]
+
         public int CustomerId { get; set; }
         [Required]
         public string Email { get; set; }
@@ -19,6 +19,5 @@ namespace BestFriend.Models.OrderModel
         public int ProductId { get; set; }
         public int Quantity { get; set; }
 
-        public DateTimeOffset CreateOrder { get; set; }
     }
 }

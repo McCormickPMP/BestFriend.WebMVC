@@ -23,9 +23,10 @@ namespace BestFriend.Services
                 new Order()
                 {
                     CustomerId = model.CustomerId,
+                    Email = model.Email,
                     Products = model.Products,
                     Quantity = model.Quantity,
-                    CreateOrder = DateTimeOffset.Now
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -49,7 +50,7 @@ namespace BestFriend.Services
                                     CustomerId = e.OrderId,
                                     Products = e.Products,
                                     Quantity = e.Quantity,
-                                    CreateOrder = DateTimeOffset.Now
+
                                 }
                         );
 
@@ -71,7 +72,7 @@ namespace BestFriend.Services
                         CustomerId = entity.OrderId,
                         Products = entity.Products,
                         Quantity = entity.Quantity,
-                        CreateOrder = DateTimeOffset.Now
+
                     };
             }
         }
@@ -87,7 +88,6 @@ namespace BestFriend.Services
                 entity.OrderId = model.OrderId;
                 entity.CustomerId = model.CustomerId;
                 entity.Quantity = model.Quantity;
-                entity.ModifyOrder = DateTimeOffset.Now;
                 return ctx.SaveChanges() == 1;
             }
         }

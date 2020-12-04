@@ -13,7 +13,7 @@ namespace BestFriend.WebMVC.Controllers
     [Authorize]
     public class OrderController : Controller
     {
-       // private ApplicationDbContext _db = new ApplicationDbContext();
+        //private ApplicationDbContext _db = new ApplicationDbContext();
        
         // GET: Order/Index
         public ActionResult Index()
@@ -63,12 +63,10 @@ namespace BestFriend.WebMVC.Controllers
             var model =
                 new OrderUpdate
                 {
-                   
-                    OrderId = detail.OrderId,
+                     OrderId = detail.OrderId,
                     CustomerId = detail.CustomerId,
                     ProductId = detail.ProductId,
                     Quantity = detail.Quantity,
-
                 };
             return View(model);
         }

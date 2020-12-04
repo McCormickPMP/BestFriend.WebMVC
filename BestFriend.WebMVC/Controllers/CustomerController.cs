@@ -14,7 +14,7 @@ namespace BestFriend.WebMVC.Controllers
     [Authorize]
     public class CustomerController : Controller
     {
-        //private ApplicationDbContext _db = new ApplicationDbContext();
+       // private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Customer
         
         public ActionResult Index()

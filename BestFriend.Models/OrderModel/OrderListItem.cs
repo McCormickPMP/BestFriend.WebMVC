@@ -14,7 +14,6 @@ namespace BestFriend.Models.OrderModel
         public int ProductId { get; set; }
         public virtual ICollection<Product> Products { get; set; }
         public int Quantity { get; set; }
-        public DateTimeOffset CreateOrder { get; set; }
-        public DateTimeOffset ModifyOrder { get; set; }
+
     }
 }

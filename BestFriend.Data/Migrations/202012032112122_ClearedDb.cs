@@ -3,7 +3,7 @@ namespace BestFriend.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdatedCustData : DbMigration
+    public partial class ClearedDb : DbMigration
     {
         public override void Up()
         {
@@ -30,14 +30,13 @@ namespace BestFriend.Data.Migrations
                 c => new
                     {
                         OrderId = c.Int(nullable: false, identity: true),
+                        Email = c.String(),
                         Quantity = c.Int(nullable: false),
                         Category = c.Int(nullable: false),
-                        CustomerId = c.Int(nullable: false),
-                        CreateOrder = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifyOrder = c.DateTimeOffset(nullable: false, precision: 7),
+                        CustomerId = c.Int(),
                     })
                 .PrimaryKey(t => t.OrderId)
-                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.Customer", t => t.CustomerId)
                 .Index(t => t.CustomerId);
             
             CreateTable(
@@ -45,18 +44,17 @@ namespace BestFriend.Data.Migrations
                 c => new
                     {
                         ProductId = c.Int(nullable: false, identity: true),
-                        Category = c.Int(nullable: false),
                         Name = c.String(nullable: false),
                         Description = c.String(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         InventoryCount = c.Int(nullable: false),
                         Rating = c.Int(nullable: false),
-                        OrderId = c.Int(nullable: false),
+                        OrderId = c.Int(),
                         CreatedProduct = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifyProduct = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ProductId)
-                .ForeignKey("dbo.Order", t => t.OrderId, cascadeDelete: true)
+                .ForeignKey("dbo.Order", t => t.OrderId)
                 .Index(t => t.OrderId);
             
             CreateTable(
