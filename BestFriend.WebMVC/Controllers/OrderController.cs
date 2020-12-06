@@ -18,13 +18,12 @@ namespace BestFriend.WebMVC.Controllers
         // GET: Order/Index
         public ActionResult Index()
         {
-            //var orderGuid = Guid.Parse(User.Identity.GetUserId());
-            //var service = new OrderService(orderGuid);
-            //var model = service.GetOrders();
-            //return View(model);
-           OrderService orderServices = CreateOrderService();
-            var orders = orderServices.GetOrders();
-            return View(orders);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new OrderService(userId);
+            var model = service.GetOrders();
+           //OrderService orderServices = CreateOrderService();
+           // var orders = orderServices.GetOrders();
+            return View(model);
             //var model = new OrderListItem[0];
             //return View(model);
         }
@@ -64,10 +63,8 @@ namespace BestFriend.WebMVC.Controllers
                 new OrderUpdate
                 {
                      OrderId = detail.OrderId,
-                     CustomerId = detail.CustomerId,
                      Email = detail.Email,
                      Category = detail.Category,
-
                      Quantity = detail.Quantity,
                 };
             return View(model);

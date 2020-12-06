@@ -3,7 +3,7 @@ namespace BestFriend.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdatedCode : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -34,10 +34,12 @@ namespace BestFriend.Data.Migrations
                         Quantity = c.Int(nullable: false),
                         ProductId = c.Int(nullable: false),
                         Category = c.Int(nullable: false),
-                        CustomerId = c.Int(),
+                        CustomerId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderId)
-                .ForeignKey("dbo.Customer", t => t.CustomerId)
+                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.Product", t => t.ProductId, cascadeDelete: true)
+                .Index(t => t.ProductId)
                 .Index(t => t.CustomerId);
             
             CreateTable(
@@ -53,10 +55,13 @@ namespace BestFriend.Data.Migrations
                         InventoryCount = c.Int(nullable: false),
                         Rating = c.Int(nullable: false),
                         OrderId = c.Int(),
+                        Order_OrderId = c.Int(),
                     })
                 .PrimaryKey(t => t.ProductId)
                 .ForeignKey("dbo.Order", t => t.OrderId)
-                .Index(t => t.OrderId);
+                .ForeignKey("dbo.Order", t => t.Order_OrderId)
+                .Index(t => t.OrderId)
+                .Index(t => t.Order_OrderId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -136,14 +141,18 @@ namespace BestFriend.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Product", "Order_OrderId", "dbo.Order");
+            DropForeignKey("dbo.Order", "ProductId", "dbo.Product");
             DropForeignKey("dbo.Product", "OrderId", "dbo.Order");
             DropForeignKey("dbo.Order", "CustomerId", "dbo.Customer");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Product", new[] { "Order_OrderId" });
             DropIndex("dbo.Product", new[] { "OrderId" });
             DropIndex("dbo.Order", new[] { "CustomerId" });
+            DropIndex("dbo.Order", new[] { "ProductId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");

@@ -69,6 +69,7 @@ namespace BestFriend.WebMVC.Controllers
             var model =
                 new ProductUpdate
                 {
+                    ProductId = detail.ProductId,
                     Name = detail.Name,
                     Description = detail.Description,
                     Category = detail.Category,

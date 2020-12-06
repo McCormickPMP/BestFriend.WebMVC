@@ -11,14 +11,17 @@ namespace BestFriend.Models.OrderModel
 {
     public class OrderCreate
     {
-       // public Guid OwnerId { get; set; }
-        public int? CustomerId { get; set; }
+        public int OrderId { get; set; }
+        //public Guid OwnerId { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
         [Required]
         public string Email { get; set; }
         public Category Category { get; set; }
         
-        public int ProductId { get; set; }
         public int Quantity { get; set; }
+
+        
 
     }
 }

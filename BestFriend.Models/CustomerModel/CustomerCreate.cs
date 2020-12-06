@@ -10,6 +10,7 @@ namespace BestFriend.Models.CustomerModel
 {
     public class CustomerCreate
     {
+        public int CustomerId { get; set; }
 
         [Display(Name = "User Name")]
         public string UserName { get; set; }

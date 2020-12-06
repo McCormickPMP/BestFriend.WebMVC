@@ -10,7 +10,7 @@ namespace BestFriend.Models.ProductModel
 {
     public class ProductListItem
     {
-        public int? ProductId { get; set; }
+        public int ProductId { get; set; }
 
         public Category Category { get; set; }
         [Required]

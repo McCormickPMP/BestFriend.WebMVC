@@ -10,6 +10,7 @@ namespace BestFriend.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "BestFriend.Data.ApplicationDbContext";
         }
 
         protected override void Seed(BestFriend.Data.ApplicationDbContext context)

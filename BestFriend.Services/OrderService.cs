@@ -25,7 +25,7 @@ namespace BestFriend.Services
                     //OwnerId = _userId,
                     CustomerId = model.CustomerId,
                     Email = model.Email,
-                    Category = model.Category,
+                   // Category = model.Category,
                     ProductId = model.ProductId,
                     Quantity = model.Quantity,
 
@@ -51,9 +51,8 @@ namespace BestFriend.Services
                                     OrderId = e.OrderId,
                                     CustomerId = e.CustomerId,
                                     Email = e.Email,
-                                    Category = e.Category,
+                                    //Category = e.Category,
                                     ProductId = e.ProductId,
-  
                                     Quantity = e.Quantity,
 
                                 }
@@ -69,15 +68,14 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == id && e.OwnerId == _userId);
+                        .Single(e => e.OrderId == id && e.Customer.OwnerId == _userId);
                 return
                     new OrderDetail
                     {
                         OrderId = entity.OrderId,
                         CustomerId = entity.CustomerId,
                         Email = entity.Email,
-                        Category = entity.Category,
-                        Products = entity.Products,
+                       // Category = entity.Category,
                         Quantity = entity.Quantity,
 
                     };
@@ -90,10 +88,11 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == model.OrderId && e.OwnerId == _userId);
+                        .Single(e => e.OrderId == model.OrderId && e.Customer.OwnerId == _userId);
 
                 entity.OrderId = model.OrderId;
                 entity.CustomerId = model.CustomerId;
+                entity.ProductId = model.Product.ProductId;
                 entity.Quantity = model.Quantity;
                 return ctx.SaveChanges() == 1;
             }
@@ -105,7 +104,7 @@ namespace BestFriend.Services
                 var entity =
                     ctx
                         .Orders
-                        .Single(e => e.OrderId == orderId && e.OwnerId == _userId);
+                        .Single(e => e.OrderId == orderId && e.Customer.OwnerId == _userId);
 
                 ctx.Orders.Remove(entity);
 

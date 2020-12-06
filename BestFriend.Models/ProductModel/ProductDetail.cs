@@ -11,7 +11,7 @@ namespace BestFriend.Models.ProductModel
     public class ProductDetail
     {
 
-        public int? ProductId { get; set; }
+        public int ProductId { get; set; }
         public Category Category { get; set; }
         [Required]
         public string Name { get; set; }

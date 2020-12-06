@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BestFriend.Data
 {
+    public enum Category {[Display(Name = "Dog")] Dog = 1, [Display(Name = "Cat")] Cat, [Display(Name = "Reptile")] Reptile, [Display(Name = "Pocket Pet")] PocketPet, [Display(Name = "Hamster")] Hamster, [Display(Name = "Gerbil")] Gerbil, [Display(Name = "Mouse")] Mouse }
 
     public class Product
     {
