@@ -4,6 +4,7 @@ using BestFriend.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -18,14 +19,9 @@ namespace BestFriend.WebMVC.Controllers
         // GET: Order/Index
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new OrderService(userId);
-            var model = service.GetOrders();
-           //OrderService orderServices = CreateOrderService();
-           // var orders = orderServices.GetOrders();
-            return View(model);
-            //var model = new OrderListItem[0];
-            //return View(model);
+            OrderService orderServices = CreateOrderService();
+            var orders = orderServices.GetOrders();
+            return View(orders);
         }
         //GET Create Order
         public ActionResult Create()
@@ -64,7 +60,6 @@ namespace BestFriend.WebMVC.Controllers
                 {
                      OrderId = detail.OrderId,
                      Email = detail.Email,
-                     Category = detail.Category,
                      Quantity = detail.Quantity,
                 };
             return View(model);

@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202012061749096_UpdateCustomer.Designer.cs">
       <DependentUpon>202012061749096_UpdateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012061805464_UpdateOrder.cs" />
+    <Compile Include="Migrations\202012061805464_UpdateOrder.Designer.cs">
+      <DependentUpon>202012061805464_UpdateOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012061749096_UpdateCustomer.resx">
       <DependentUpon>202012061749096_UpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012061805464_UpdateOrder.resx">
+      <DependentUpon>202012061805464_UpdateOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

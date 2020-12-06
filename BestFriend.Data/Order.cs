@@ -16,7 +16,6 @@ namespace BestFriend.Data
         public string Email { get; set; }
         
         //public Guid OwnerId { get; set; }
-        [Required]
         public virtual ICollection<Product> Products { get; set; } = new List<Product>();
         [Required]
         public int Quantity { get; set; }
@@ -25,7 +24,7 @@ namespace BestFriend.Data
         public int ProductId { get; set; }
         [ForeignKey(nameof(ProductId))]
         public virtual Product Product { get; set; }
-        //public Category Category { get; set; }
+
 
        [Required]
         public int CustomerId { get; set; }

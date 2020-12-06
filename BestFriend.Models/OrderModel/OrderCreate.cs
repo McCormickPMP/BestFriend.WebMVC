@@ -17,8 +17,7 @@ namespace BestFriend.Models.OrderModel
         public int ProductId { get; set; }
         [Required]
         public string Email { get; set; }
-        public Category Category { get; set; }
-        
+       
         public int Quantity { get; set; }
 
         
