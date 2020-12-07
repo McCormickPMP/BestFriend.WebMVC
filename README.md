@@ -21,7 +21,7 @@ https://bestfriendwebmvc.azurewebsites.net/
 2. https://www.codementor.io/@cerkit/giving-an-enum-a-string-value-using-the-description-attribute-6b4fwdle0
 
 ### ICollections
-https://www.bing.com/videos/search?q=using+an+Icollection+in+MVC&&view=detail&mid=BE1B9A636C3895B0725BBE1B9A636C3895B0725B&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Dusing%2Ban%2BIcollection%2Bin%2BMVC%26qpvt%3Dusing%2Ban%2BIcollection%2Bin%2BMVC%26FORM%3DVDRE
+https://www.youtube.com/watch?v=rtXpYpZdOzM
 
 ### List From Database
 1. http://techfunda.com/howto/277/list-the-data-from-database
