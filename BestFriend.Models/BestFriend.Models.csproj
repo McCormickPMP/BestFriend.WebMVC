@@ -54,12 +54,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductListItem.cs" />
+    <Compile Include="CustomerModel\CustomerCreate.cs" />
+    <Compile Include="CustomerModel\CustomerDetail.cs" />
+    <Compile Include="CustomerModel\CustomerList.cs" />
+    <Compile Include="CustomerModel\CustomerUpdate.cs" />
+    <Compile Include="OrderModel\OrderCreate.cs" />
+    <Compile Include="OrderModel\OrderDetail.cs" />
+    <Compile Include="OrderModel\OrderListItem.cs" />
+    <Compile Include="OrderModel\OrderUpdate.cs" />
+    <Compile Include="ProductModel\ProductCreate.cs" />
+    <Compile Include="ProductModel\ProductDetail.cs" />
+    <Compile Include="ProductModel\ProductListItem.cs" />
+    <Compile Include="ProductModel\ProductUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BestFriend.Data\BestFriend.Data.csproj">
+      <Project>{882fb6b2-febc-4953-94d4-72e0e49bd5ca}</Project>
+      <Name>BestFriend.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
