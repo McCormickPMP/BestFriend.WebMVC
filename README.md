@@ -26,9 +26,7 @@ https://www.youtube.com/watch?v=rtXpYpZdOzM
 ### List From Database
 1. http://techfunda.com/howto/277/list-the-data-from-database
 
-### Sorting the Table
-1. https://www.c-sharpcorner.com/UploadFile/4b0136/perform-paging-searching-sorting-in-Asp-Net-mvc-5/
 
 ### Drop Down Lists
 1. https://www.c-sharpcorner.com/article/simply-create-dropdown-list-from-database-in-mvc-5-0/
-2. https://www.pluralsight.com/guides/asp-net-mvc-populating-dropdown-lists-in-razor-views-using-the-mvvm-design-pattern-entity-framework-and-ajax
+
